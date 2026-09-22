@@ -84,33 +84,3 @@ caption { text-align: left; font-weight: 600; margin-bottom: 12px; }
 th, td { padding: 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
 thead { background: #eaf1e9; }
 td { color: var(--muted); }
-
-/* Download controls stay on screen, outside the exported document. */
-.document-actions { margin-top: 28px; }
-button.button { font: inherit; font-weight: 600; border: 0; }
-.button:disabled { background: #d9e1d8; color: #465b50; cursor: not-allowed; }
-.document-actions p { margin: 8px 0 0; }
-
-@media print {
- @page { size: auto; margin: 18mm; }
- body { background: white; color: black; font-size: 11pt; line-height: 1.45; }
- .container { width: 100%; max-width: none; margin: 0; }
- .site-header, .site-footer, .skip-link, .breadcrumb, .sprint-navigation, .document-actions { display: none !important; }
- .page-heading, .breadcrumb + .page-heading { padding: 0 0 12pt; }
- .page-heading h1 { font-size: 26pt; margin-bottom: 10pt; }
- .lead { font-size: 12pt; }
- .sprint-sections, .sprint-grid, .team-grid { display: block; }
- .card { border: 0; border-radius: 0; padding: 0; margin-bottom: 16pt; background: transparent; }
- .sprint-sections h2 { font-size: 16pt; margin-bottom: 8pt; }
- .sprint-sections h3 { font-size: 13pt; }
- h1, h2, h3, dt { break-after: avoid; }
- p, li, dd { orphans: 3; widows: 3; }
- li { margin-bottom: 5pt; }
- .lead, .eyebrow, .section-note, .card p, .sprint-sections p, .sprint-sections li, dd, td { color: black; }
- a { color: black; }
- .table-scroll { overflow: visible; }
- table { min-width: 0; width: 100%; }
- th, td { overflow-wrap: anywhere; }
- thead { display: table-header-group; }
- tr { break-inside: avoid; }
-}
