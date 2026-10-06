@@ -6,6 +6,9 @@
     <title>Size the People | Sprint 2 | Formly</title>
     <meta name="description" content="Staffing estimate for Formly sprint 2 planning.">
     <link rel="stylesheet" href="../../assets/styles.css">
+    <style>
+        .sprint-sections > .card { min-width: 0; }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -38,9 +41,150 @@
         <div class="sprint-sections">
             <section class="card" aria-labelledby="person-months">
                 <h2 id="person-months">4. Person-months</h2>
+                <p>FTE-months = Hours ÷ 130, assuming 130 productive hours/person/month.</p>
+                <div class="table-scroll" role="region" aria-labelledby="person-months" tabindex="0">
+                    <table>
+                        <caption>Effort converted to full-time equivalent (FTE) months</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Role</th>
+                                <th scope="col">Hours</th>
+                                <th scope="col">Calculation</th>
+                                <th scope="col">FTE-months</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Developers</th>
+                                <td>2,100</td>
+                                <td>2,100 ÷ 130</td>
+                                <td>16.15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Quality assurance</th>
+                                <td>600</td>
+                                <td>600 ÷ 130</td>
+                                <td>4.62</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">User experience</th>
+                                <td>700</td>
+                                <td>700 ÷ 130</td>
+                                <td>5.38</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DevOps</th>
+                                <td>400</td>
+                                <td>400 ÷ 130</td>
+                                <td>3.08</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Delivery subtotal</th>
+                                <td>3,800</td>
+                                <td>3,800 ÷ 130</td>
+                                <td>29.23</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Project manager</th>
+                                <td>780</td>
+                                <td>780 ÷ 130</td>
+                                <td>6</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">Total</th>
+                                <td>4,580</td>
+                                <td>4,580 ÷ 130</td>
+                                <td>35.23</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </section>
             <section class="card" aria-labelledby="staffing-plan">
                 <h2 id="staffing-plan">5. Staffing plan</h2>
+                <div class="table-scroll" role="region" aria-labelledby="staffing-plan" tabindex="0">
+                    <table>
+                        <caption>Monthly staffing allocation (FTE) across six months</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Role</th>
+                                <th scope="col">M1</th>
+                                <th scope="col">M2</th>
+                                <th scope="col">M3</th>
+                                <th scope="col">M4</th>
+                                <th scope="col">M5</th>
+                                <th scope="col">M6</th>
+                                <th scope="col">FTE-months</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Project manager</th>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Developers</th>
+                                <td>2</td>
+                                <td>2.5</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>2.65</td>
+                                <td>16.15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Quality assurance</th>
+                                <td>0.25</td>
+                                <td>0.5</td>
+                                <td>0.75</td>
+                                <td>0.9</td>
+                                <td>1.1</td>
+                                <td>1.12</td>
+                                <td>4.62</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">User experience</th>
+                                <td>1.5</td>
+                                <td>1.5</td>
+                                <td>1</td>
+                                <td>0.75</td>
+                                <td>0.4</td>
+                                <td>0.23</td>
+                                <td>5.38</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DevOps</th>
+                                <td>0.75</td>
+                                <td>0.4</td>
+                                <td>0.3</td>
+                                <td>0.3</td>
+                                <td>0.55</td>
+                                <td>0.78</td>
+                                <td>3.08</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">Total FTE</th>
+                                <td>5.5</td>
+                                <td>5.9</td>
+                                <td>6.05</td>
+                                <td>5.95</td>
+                                <td>6.05</td>
+                                <td>5.78</td>
+                                <td>35.23</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </section>
         </div>
         <p class="section-note"><a class="button" href="pdfs/size-the-people.pdf" download>Download PDF</a></p>
