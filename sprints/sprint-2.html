@@ -40,7 +40,63 @@
             <section class="card" aria-labelledby="estimation-appendix">
                 <h2 id="estimation-appendix">Estimation Appendix</h2>
                 <p>The estimation methods used, the ranges produced, and the reasoning behind them.</p>
-                <p>[Describe the estimation approach, assumptions, ranges, and rationale used to produce the cost and staffing estimates. Explain the limits of the estimate and why the ranges are intentionally conservative or exploratory.]</p>
+                <h4>Estimation Appendix Summary at a glance</h4>
+                <table class="estimation-table">
+                    <tr style="background-color: #eaf1e9;">
+                        <th>Field</th>
+                        <th>Our Estimate</th>
+                    </tr>
+                    <tr>
+                        <td><b>Slice estimated</b></td>
+                        <td>Deliver live exercise feedback with measurable low latency</td>
+                    </tr>
+                    <tr>
+                        <td><b>Range in hours (low to high)</b></td>
+                        <td>360-3,672 hours</td>
+                    </tr>
+                    <tr>
+                        <td><b>Expected hours: <br>((O + 4M + P) / 6), and why we chose M</b></td>
+                        <td>(360 + 4(2,760) + 3,672) ÷ 6 = 2,512 hours. We chose 2,760 hours as our most likely value because it represents the middle Story Point estimate using our assumed velocity of 20 points per sprint.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Cost range and loaded rate used</b></td>
+                        <td>According to the Bureau of Labor statistics, the median annual wage 
+                            for a software developer was $135,980 in May 2025. Assuming a 20% 
+                            overhead then the loaded rate would be $65.37 an hour &times; 0.20 = 13.07, 
+                            so $65.37 + $13.07 = $78.44 an hour. The cost range would then be: <br>
+                               &#x2022; Low: 360 hrs &times; 78.44 = $28,238.40  <br>
+                               &#x2022; Expected: 2,512 hrs &times; 78.44 = $197,041.28  <br>
+                               &#x2022; High: 3,672 hrs &times; 78.44 = $288,007.68 <br>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><b>Calendar estimate in weeks, and hours per week assumed</b></td>
+                        <td>Productive hours per person per week: 40 <br> 
+                            Hours per week assumed: 1200 (30 &times; 40) <br>
+                            2,512 ÷ (30 &times; 40) = 2.09 weeks, about 2 weeks</td>
+                    </tr>
+                    <tr>
+                        <td><b>Methods used</b></td>
+                        <td>Function points and story points</td>
+                    </tr>
+                    <tr>
+                        <td><b>Key Assumptions</b></td>
+                        <td>6-12 hours per FP, 15/20/30 story points per sprint, 80 hours per person per sprint, 30 team members, 20% overhead, M = 2,760, pay rate of $65.37</td>
+                    </tr>
+                    <tr>
+                        <td><b>Team size assumed</b></td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td><b>What would change this estimate</b></td>
+                        <td>The actual hours and velocity needed to complete the slice.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Date of this estimate</b></td>
+                        <td>10/5/2026</td>
+                    </tr>
+                </table>
+                <br>
                 <details>
                     <summary><strong>Read 10 step budget</strong></summary> #can remove this if we don't want to include the 10 step budget in the sprint 2 page or just add link to downloadable one page budget
                     <div class="sprint-grid" style="margin-top: 16px;">
