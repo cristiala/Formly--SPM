@@ -6,6 +6,9 @@
     <title>Protect and Track | Sprint 2 | Formly</title>
     <meta name="description" content="Risk and tracking plan for Formly sprint 2.">
     <link rel="stylesheet" href="../../assets/styles.css">
+    <style>
+        .sprint-sections > .card { min-width: 0; }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -38,9 +41,112 @@
         <div class="sprint-sections">
             <section class="card" aria-labelledby="reserves">
                 <h2 id="reserves">9. Reserves</h2>
+                <p>Expected monetary value (EMV) = probability × incremental cost impact. Our contingency reserve is the sum of the five risk EMVs: <strong>$22,500</strong>. All amounts are in USD; probabilities and recovery effort are planning assumptions, not measured failure rates.</p>
+                <div class="table-scroll" role="region" aria-labelledby="reserves" tabindex="0">
+                    <table>
+                        <caption>Risk register and contingency calculation</caption>
+                        <thead>
+                            <tr><th scope="col">Risk</th><th scope="col">Chance</th><th scope="col">Cost impact and basis</th><th scope="col">EMV</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">A key developer leaves mid-project</th><td>15%</td><td>$80,000: additional onboarding, knowledge transfer, and rework.</td><td>$12,000</td></tr>
+                            <tr><th scope="row">Launch cannot handle expected workload</th><td>20%</td><td>$30,000: unplanned capacity adjustments and recovery beyond the capacity already budgeted.</td><td>$6,000</td></tr>
+                            <tr><th scope="row">Premium features are not developed in time</th><td>5%</td><td>$30,000: 2 additional FTE-months × $15,000 for completion, integration, and regression testing. Lost revenue is not included.</td><td>$1,500</td></tr>
+                            <tr><th scope="row">Live feedback exceeds the latency target</th><td>15%</td><td>$15,000: 1 additional FTE-month for profiling, buffering/rendering improvements, and latency retesting under normal load.</td><td>$2,250</td></tr>
+                            <tr><th scope="row">Webcam or device incompatibility</th><td>10%</td><td>$7,500: 0.5 additional FTE-month for camera/browser compatibility fixes and device testing.</td><td>$750</td></tr>
+                        </tbody>
+                        <tfoot><tr><th scope="row" colspan="3">Contingency reserve: sum of EMVs</th><td>$22,500</td></tr></tfoot>
+                    </table>
+                </div>
+                <h3 id="risk-response">Risk responses and triggers</h3>
+                <div class="table-scroll" role="region" aria-labelledby="risk-response" tabindex="0">
+                    <table>
+                        <caption>Proposed response responsibilities</caption>
+                        <thead><tr><th scope="col">Risk / proposed owner</th><th scope="col">Prevention or mitigation</th><th scope="col">Trigger for review</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Developer departure / technical lead</th><td>Document critical components, share code ownership, and keep onboarding notes current.</td><td>A departure notice or an unfilled critical development responsibility.</td></tr>
+                            <tr><th scope="row">Launch workload / infrastructure lead</th><td>Plan self-hosted capacity at three times expected launch demand for the first launch month; load-test before release. Power down extra servers if sustained demand is low.</td><td>Load tests or launch monitoring show demand exceeding tested capacity. Confirm that planned headroom fits the infrastructure allocation before launch.</td></tr>
+                            <tr><th scope="row">Premium delay / product lead</th><td>Prioritize the core premium scope and review feature completion each sprint.</td><td>A premium milestone slips or a required feature fails acceptance testing.</td></tr>
+                            <tr><th scope="row">Latency / frontend and QA leads</th><td>Measure frame-capture-to-visible-feedback delay using simulated feedback; agree on a latency threshold before testing.</td><td>Measured delay exceeds the agreed target under normal operating load.</td></tr>
+                            <tr><th scope="row">Compatibility / QA lead</th><td>Test supported browsers, camera permissions, and representative mobile and desktop devices early.</td><td>A supported device cannot reliably start the camera or display feedback.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="section-note">Planned mitigation belongs in the base estimate; risk impacts cover additional recovery only. Capacity, latency, and compatibility costs must not be charged twice for the same work. Powering down self-hosted servers reduces avoidable running costs, not hardware costs already incurred.</p>
+                <h3 id="reserve-policy">Reserve policy</h3>
+                <div class="table-scroll" role="region" aria-labelledby="reserve-policy" tabindex="0">
+                    <table>
+                        <caption>Contingency versus management reserve</caption>
+                        <thead><tr><th scope="col">Policy</th><th scope="col">Contingency reserve</th><th scope="col">Management reserve</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Covers</th><td>Identified risks in the risk register.</td><td>Unforeseen work within the approved project scope.</td></tr>
+                            <tr><th scope="row">Inside the cost baseline?</th><td>Yes</td><td>No</td></tr>
+                            <tr><th scope="row">Controlled by</th><td>Project manager, within approved authority.</td><td>Project sponsor, through change control.</td></tr>
+                            <tr><th scope="row">Sizing formula</th><td>Sum of risk EMVs = $22,500.</td><td>5% × $563,954 cost baseline = $28,197.70.</td></tr>
+                            <tr><th scope="row">Release and tracking</th><td>Record the risk, approved response amount, date, and remaining reserve.</td><td>Require sponsor approval; document the baseline change and remaining reserve.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <section class="card" aria-labelledby="time-phase">
                 <h2 id="time-phase">10. Time-phase and check</h2>
+                <p>Monthly labor = scheduled FTE × $15,000 per FTE-month. Recurring non-labor is $1,400 infrastructure + $330 tools per month. For this schedule, the $2,500 legal fee is placed in M1 and $124 app integration fees in M6.</p>
+                <div class="table-scroll" role="region" aria-labelledby="time-phase" tabindex="0">
+                    <table>
+                        <caption>Six-month base build spending plan (USD)</caption>
+                        <thead><tr><th scope="col">Month</th><th scope="col">FTE</th><th scope="col">Labor</th><th scope="col">Non-labor</th><th scope="col">Monthly total</th><th scope="col">Cumulative total</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">M1</th><td>5.50</td><td>$82,500</td><td>$4,230</td><td>$86,730</td><td>$86,730</td></tr>
+                            <tr><th scope="row">M2</th><td>5.90</td><td>$88,500</td><td>$1,730</td><td>$90,230</td><td>$176,960</td></tr>
+                            <tr><th scope="row">M3</th><td>6.05</td><td>$90,750</td><td>$1,730</td><td>$92,480</td><td>$269,440</td></tr>
+                            <tr><th scope="row">M4</th><td>5.95</td><td>$89,250</td><td>$1,730</td><td>$90,980</td><td>$360,420</td></tr>
+                            <tr><th scope="row">M5</th><td>6.05</td><td>$90,750</td><td>$1,730</td><td>$92,480</td><td>$452,900</td></tr>
+                            <tr><th scope="row">M6</th><td>5.78</td><td>$86,700</td><td>$1,854</td><td>$88,554</td><td>$541,454</td></tr>
+                        </tbody>
+                        <tfoot><tr><th scope="row">Total</th><td>35.23</td><td>$528,450</td><td>$13,004</td><td>$541,454</td><td>$541,454</td></tr></tfoot>
+                    </table>
+                </div>
+                <p class="section-note">The monthly plan uses the rounded staffing allocations from <a href="size-the-people.html">Size the people</a>. It phases base build costs only: reserves remain separately controlled until approved for use. Annual operating costs are separate and are not included in this build request.</p>
+                <h3 id="build-request">Full build request</h3>
+                <div class="table-scroll" role="region" aria-labelledby="build-request" tabindex="0">
+                    <table>
+                        <caption>From base estimate to total funding request (USD)</caption>
+                        <thead><tr><th scope="col">Budget line</th><th scope="col">Calculation / basis</th><th scope="col">Amount</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Labor</th><td>35.23 FTE-months × $15,000</td><td>$528,450.00</td></tr>
+                            <tr><th scope="row">Non-labor</th><td>$8,400 infrastructure + $1,980 tools + $0 incremental AI licenses + $124 app fees + $2,500 legal</td><td>$13,004.00</td></tr>
+                            <tr><th scope="row">Base build estimate</th><td>Labor + non-labor</td><td>$541,454.00</td></tr>
+                            <tr><th scope="row">Contingency reserve</th><td>Sum of five risk EMVs</td><td>$22,500.00</td></tr>
+                            <tr><th scope="row">Cost baseline</th><td>Base build estimate + contingency reserve</td><td>$563,954.00</td></tr>
+                            <tr><th scope="row">Management reserve</th><td>5% × cost baseline</td><td>$28,197.70</td></tr>
+                        </tbody>
+                        <tfoot><tr><th scope="row">Total build request</th><td>Cost baseline + management reserve</td><td>$592,151.70</td></tr></tfoot>
+                    </table>
+                </div>
+                <h3 id="budget-checks">Budget checks and tracking</h3>
+                <div class="table-scroll" role="region" aria-labelledby="budget-checks" tabindex="0">
+                    <table>
+                        <caption>Checks before and during delivery</caption>
+                        <thead><tr><th scope="col">Check</th><th scope="col">Result or tracking rule</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Staffing and spending reconcile</th><td>Monthly staffing totals 35.23 FTE-months. Monthly labor totals $528,450 and non-labor totals $13,004; together they match the $541,454 base estimate.</td></tr>
+                            <tr><th scope="row">Cost mix</th><td>Labor is 97.60% of the base estimate. Review the small non-labor allowance against the self-hosting and zero incremental AI-license assumptions.</td></tr>
+                            <tr><th scope="row">Reserve traceability</th><td>The $22,500 contingency equals the five EMVs. Keep a reserve log with opening balance, approved draws, linked risks, and remaining balance.</td></tr>
+                            <tr><th scope="row">Monthly spending and delivery</th><td>At each month-end, record actual spending, compare actual minus planned spending, and review accepted work and milestones. Positive spending variance means spending above plan; lower spending alone does not prove the project is ahead.</td></tr>
+                            <tr><th scope="row">Forecast and approvals</th><td>Update the forecast as actual cost to date + estimated remaining cost. Review overruns and reserve requests with the project manager; escalate management-reserve use to the sponsor.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="section-note">This is a planning baseline, not a report of actual spending. Revisit risk probabilities, remaining work, and the launch capacity assumption at each monthly review.</p>
+            </section>
+            <section class="card" aria-labelledby="budget-charts">
+                <h2 id="budget-charts">Budget charts</h2>
+                <figure style="margin: 0;">
+                    <a href="../../assets/protect-and-track-charts.png" aria-label="Open budget charts at full size">
+                        <img src="../../assets/protect-and-track-charts.png" alt="Stacked monthly labor and non-labor spending for M1 through M6, plus cumulative planned build spending ending at $541,454. Exact values are provided in the monthly table above." style="display: block; width: 100%; height: auto;">
+                    </a>
+                    <figcaption class="section-note">Monthly spending and cumulative base build costs. Both charts start at zero and exclude reserves. Select the charts to view them at full size; the tables above provide the exact values.</figcaption>
+                </figure>
             </section>
         </div>
         <p class="section-note"><a class="button" href="pdfs/protect-and-track.pdf" download>Download PDF</a></p>
