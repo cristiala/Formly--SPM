@@ -1,59 +1,239 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Define the Work | Sprint 2 | Formly</title>
-    <meta name="description" content="Define the work planning for Formly sprint 2.">
-    <link rel="stylesheet" href="../../assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Define the Work | Sprint 2 | Formly</title>
+  <meta name="description" content="Define the work planning for Formly sprint 2.">
+  <link rel="stylesheet" href="../../assets/styles.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="../../index.html">
-                <span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span>
-            </a>
-            <nav aria-label="Main navigation">
-                <a href="../../index.html">Home</a>
-                <a href="../../about.html">About Us</a>
-                <a href="../sprint-1.html">Sprint 1</a>
-                <a href="../sprint-2.html" aria-current="page">Sprint 2</a>
-            </nav>
-        </div>
-    </header>
-    <main id="main" class="container" tabindex="-1">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="../../index.html">Home</a>
-            <span aria-hidden="true">/</span>
-            <a href="../sprint-2.html">Sprint 2</a>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">Define the work</span>
-        </nav>
-        <section class="page-heading">
-            <p class="eyebrow">Sprint 2 document</p>
-            <h1>Define the work</h1>
-            <p class="lead">Break the project into assumptions, work packages, and the effort required to deliver it.</p>
-        </section>
-        <div class="sprint-sections">
-            <section class="card" aria-labelledby="assumptions">
-                <h2 id="assumptions">1. Assumptions</h2>
-            </section>
-            <section class="card" aria-labelledby="work-packages">
-                <h2 id="work-packages">2. Work packages</h2>
-            </section>
-            <section class="card" aria-labelledby="effort">
-                <h2 id="effort">3. Effort</h2>
-            </section>
-        </div>
-        <p class="section-note"><a class="button" href="pdfs/define-the-work.pdf" download>Download PDF</a></p>
-        <nav class="sprint-navigation" aria-label="Document navigation">
-            <a href="../sprint-2.html">← Back to Sprint 2</a>
-        </nav>
-    </main>
-    <footer class="container site-footer">
-        <span>Formly / Living Project Portal</span>
-        <span>Software Project Management</span>
-    </footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html">Home</a>
+        <a href="../../about.html">About Us</a>
+        <a href="../sprint-1.html">Sprint 1</a>
+        <a href="../sprint-2.html" aria-current="page">Sprint 2</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="../sprint-2.html">Sprint 2</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Define the work</span>
+    </nav>
+    <section class="page-heading">
+      <p class="eyebrow">Sprint 2 document</p>
+      <h1>Define the work</h1>
+      <p class="lead">Break the project into assumptions, work packages, and the effort required to deliver it.</p>
+    </section>
+    
+    <div class="sprint-sections">
+      <section class="card" aria-labelledby="assumptions">
+        <h2 id="assumptions">1. Assumptions</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Assumption</th>
+              <th>Why it drives cost</th>
+              <th>Owner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cross-platform codebase (iOS & Android)</td>
+              <td>Building from a single shared codebase avoids duplicating frontend engineering hours.</td>
+              <td>Technical Lead</td>
+            </tr>
+            <tr>
+              <td>Computer vision model processing handles real-time video feeds</td>
+              <td>Requires specific technical infrastructure, higher computing, and optimization to process frames.</td>
+              <td>Technical Lead</td>
+            </tr>
+            <tr>
+              <td>Core API and user account back-end run on cloud infrastructure</td>
+              <td>Determines hosting, server scaling, and database storage tiers required to manage user data.</td>
+              <td>Technical Lead/DevOps</td>
+            </tr>
+            <tr>
+              <td>Third-party integrations (payments)</td>
+              <td>Every added external service introduces implementation complexity, testing overhead, and APIs.</td>
+              <td>Integration lead</td>
+            </tr>
+            <tr>
+              <td>Fixed project duration and defined team capacity</td>
+              <td>Sets the total labor footprint, project milestones, and resource allocation across sprints.</td>
+              <td>Project Sponsor/Manager</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" aria-labelledby="work-packages">
+        <h2 id="work-packages">2. Work packages</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Work Package</th>
+              <th>Role</th>
+              <th>Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Real-time video processing &amp; form detection engine</td>
+              <td>Developers</td>
+              <td>1200</td>
+            </tr>
+            <tr>
+              <td>User interface &amp; workout dashboard (UX/UI)</td>
+              <td>UX Designer/Developers</td>
+              <td>700</td>
+            </tr>
+            <tr>
+              <td>User account management &amp; workout history back end (APIs)</td>
+              <td>Developers</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td>Testing, usability evaluation, and quality assurance (QA)</td>
+              <td>QA</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>Cloud infrastructure, video streaming, and deployment (DevOps)</td>
+              <td>Development operations</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td>-</td>
+              <td><strong>3800</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" aria-labelledby="effort">
+        <h2 id="effort">3. Effort</h2>
+        <p><strong>PERT Estimation Formula:</strong> E = (O + 4M + P) \ 6</p>
+        <ul>
+          <li><strong>Optimistic (O):</strong> 3,200 hours</li>
+          <li><strong>Most Likely (M):</strong> 3,700 hours</li>
+          <li><strong>Pessimistic (P):</strong> 4,600 hours</li>
+          <li><strong>Expected (E):</strong> 3,767 hours</li>
+        </ul>
+        <p><strong>User Stories</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>User story</th>
+              <th>MoSCoW</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>As a user, I can grant camera permission and start a live-feedback session</td>
+              <td>Must</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>As a user, I can see the webcam stream on the workout screen</td>
+              <td>Must</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>As a user, I can see simulated form feedback overlaid on the live video</td>
+              <td>Must</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>As a user, I receive a warning when feedback is delayed or disconnected</td>
+              <td>Should</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>As a user, I can enable an optional audio cue when new feedback appears</td>
+              <td>Could</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td>-</td>
+              <td><strong>24</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Function Point</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Count</th>
+              <th>Weight</th>
+              <th>Total Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>External Inputs (EI)</td>
+              <td>3</td>
+              <td>4</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>External Outputs (EO)</td>
+              <td>2</td>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>External Inquiries (EQ)</td>
+              <td>1</td>
+              <td>4</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Internal Logical Files (ILF)</td>
+              <td>2</td>
+              <td>10</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>External Interface Files (EIF)</td>
+              <td>2</td>
+              <td>7</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><strong>10</strong></td>
+              <td>-</td>
+              <td><strong>60</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <p class="section-note"><a class="button" href="pdfs/define-the-work.pdf" download>Download PDF</a></p>
+    <nav class="sprint-navigation" aria-label="Document navigation">
+      <a href="../sprint-2.html">← Back to Sprint 2</a>
+    </nav>
+  </main>
+  <footer class="container site-footer">
+    <span>Formly / Living Project Portal</span>
+    <span>Software Project Management</span>
+  </footer>
 </body>
 </html>
