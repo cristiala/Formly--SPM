@@ -20,8 +20,14 @@
             <nav aria-label="Main navigation">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About Us</a>
-                <a href="../sprints/sprint-1.html" aria-current="page">Sprint 1</a>
-                <a href="../sprints/sprint-2.html">Sprint 2</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprints/sprint-1.html" aria-current="page">Sprint 1</a>
+                        <a href="../sprints/sprint-2.html">Sprint 2</a>
+                        <a href="../sprints/sprint-3.html">Sprint 3</a>
+                    </div>
+                </details>
             </nav>
         </div>
     </header>
@@ -107,7 +113,12 @@
                         </dl>
                     </article>
                 </div>
-                <h3>AI use disclosure</h3>
+                <p class="section-note"><strong>Contribution statement PDF:</strong> Not available yet. A download will
+                    be added when the document is complete.</p>
+            </section>
+
+            <section id="ai-use-disclosure" class="card doc-section" aria-labelledby="ai-use-disclosure-heading">
+                <h2 id="ai-use-disclosure-heading">AI use disclosure</h2>
                 <dl>
                     <dt>Tools used</dt>
                     <dd>Codex</dd>
@@ -116,8 +127,6 @@
                     <dt>Team review and revisions</dt>
                     <dd>The team reviewed the output and finalized the product. </dd>
                 </dl>
-                <p class="section-note"><strong>Contribution statement PDF:</strong> Not available yet. A download will
-                    be added when the document is complete.</p>
             </section>
         </div>
         <nav class="sprint-navigation" aria-label="Sprint navigation">
