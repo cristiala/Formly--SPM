@@ -1,7 +1,7 @@
-"""Render a simple teardown Markdown document as a site-ready PDF.
+"""Render a Sprint 3 Markdown document as a site-ready PDF.
 
 Usage: python agents/build_teardown_pdf.py SOURCE.md OUTPUT.pdf
-Supports headings, paragraphs, and unordered list items used by the teardown.
+Supports headings, paragraphs, and unordered list items used by sprint documents.
 """
 
 from __future__ import annotations
@@ -82,7 +82,7 @@ def story_from_markdown(source: Path) -> list:
     return story
 
 
-def add_page_frame(canvas, document) -> None:
+def add_page_frame(canvas, document, credit: str) -> None:
     canvas.saveState()
     width, height = letter
     canvas.setStrokeColor(ACCENT)
@@ -90,7 +90,7 @@ def add_page_frame(canvas, document) -> None:
     canvas.line(0.7 * inch, height - 0.56 * inch, width - 0.7 * inch, height - 0.56 * inch)
     canvas.setFont("Helvetica", 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(0.7 * inch, 0.48 * inch, "FORMLY  /  SPRINT 3  /  EDWARD PUENTES")
+    canvas.drawString(0.7 * inch, 0.48 * inch, f"FORMLY  /  SPRINT 3  /  {credit.upper()}")
     canvas.drawRightString(width - 0.7 * inch, 0.48 * inch, str(document.page))
     canvas.restoreState()
 
@@ -99,6 +99,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--credit", default="Edward Puentes", help="PDF author and footer credit")
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     pdf = SimpleDocTemplate(
@@ -108,10 +109,14 @@ def main() -> None:
         bottomMargin=0.68 * inch,
         leftMargin=0.7 * inch,
         rightMargin=0.7 * inch,
-        title="Edward Puentes - Teardown #1",
-        author="Edward Puentes",
+        title=args.source.read_text(encoding="utf-8").splitlines()[0].removeprefix("# "),
+        author=args.credit,
     )
-    pdf.build(story_from_markdown(args.source), onFirstPage=add_page_frame, onLaterPages=add_page_frame)
+
+    def draw_frame(canvas, document) -> None:
+        add_page_frame(canvas, document, args.credit)
+
+    pdf.build(story_from_markdown(args.source), onFirstPage=draw_frame, onLaterPages=draw_frame)
 
 
 if __name__ == "__main__":
