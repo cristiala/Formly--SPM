@@ -6,6 +6,7 @@
     <title>Sprint 2 | Formly</title>
     <meta name="description" content="Formly's semester project portal: meet the team and follow the project sprint by sprint.">
     <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../assets/theme.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,8 +18,14 @@
             <nav aria-label="Main navigation">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About Us</a>
-                <a href="../sprints/sprint-1.html">Sprint 1</a>
-                <a href="../sprints/sprint-2.html" aria-current="page">Sprint 2</a>
+                <details class="nav-dropdown" open>
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprints/sprint-1.html">Sprint 1</a>
+                        <a href="../sprints/sprint-2.html" aria-current="page">Sprint 2</a>
+                        <a href="../sprints/sprint-3.html">Sprint 3</a>
+                    </div>
+                </details>
             </nav>
         </div>
     </header>
@@ -44,7 +51,7 @@
                 <p>The estimation methods used, the ranges produced, and the reasoning behind them.</p>
                 <h4>Estimation Appendix Summary at a glance</h4>
                 <table class="estimation-table">
-                    <tr style="background-color: #eaf1e9;">
+                    <tr class="row-highlight">
                         <th>Field</th>
                         <th>Our Estimate</th>
                     </tr>
@@ -100,7 +107,7 @@
                 </table>
                 <br>
                 <details>
-                    <summary><strong>Read 10 step budget</strong></summary> #can remove this if we don't want to include the 10 step budget in the sprint 2 page or just add link to downloadable one page budget
+                    <summary><strong>Read 10 step budget</strong></summary> 
                     <div class="sprint-grid" style="margin-top: 16px;">
                         <a class="card sprint-card" href="sprint-2/define-the-work.html">
                             <h3>Define the work</h3>
@@ -147,54 +154,60 @@
                         <h3>Abigail Galarza</h3>
                         <dl>
                             <dt>Work owned</dt>
-                            <dd>Completed estimation Section 3C (story points to cost) and Step 5 (comparing estimates). Created the budget’s person-month calculations and six-month staffing plan, and added the tables to the <a href="sprint-2/size-the-people.html">Size the People page</a>.</dd>
+                            <dd>Completed estimation Section 3C (story points to cost) and Step 5 (comparing estimates). Created the budget's person-month calculations and six-month staffing plan, and added the tables to the <a href="sprint-2/size-the-people.html">Size the People page</a>.</dd>
                             <dt>Work reviewed</dt>
                             <dd>Reviewed the differences between the two estimation methods and checked the budget calculations and staffing totals.</dd>
                         </dl>
                     </article>
                     <article class="card">
-                        <h3>[Member 2 name]</h3>
+                        <h3>Viviana Cadena</h3>
                         <dl>
                             <dt>Work owned</dt>
-                            <dd>[Identify the Sprint 2 artifacts or sections this member produced.]</dd>
+                            <dd>Completed the Estimation Appendix Summary at a glance, Completed the Price It section, created the graph for the 3 year cost projection of the Price It section.</dd>
                             <dt>Work reviewed</dt>
-                            <dd>[Identify the artifacts or sections this member reviewed and describe that review.]</dd>
+                            <dd>Reviewed the estimation section 3C, step 5 (comparing estimates), and the size-the-people section as they directly affected all my sections.</dd>
                         </dl>
                     </article>
                     <article class="card">
-                        <h3>[Member 3 name]</h3>
+                        <h3>Cristina Alarcon</h3>
                         <dl>
                             <dt>Work owned</dt>
-                            <dd>[Identify the Sprint 2 artifacts or sections this member produced.]</dd>
+                            <dd>Developed the Define the Work step, created graphs for work packages, and worked on the change log. Gemini was used to help with syntaxing.</dd>
                             <dt>Work reviewed</dt>
-                            <dd>[Identify the artifacts or sections this member reviewed and describe that review.]</dd>
+                            <dd>Reviewed Estimation appendix.</dd>
                         </dl>
                     </article>
                     <article class="card">
-                        <h3>[Member 4 name]</h3>
+                        <h3>Edward</h3>
                         <dl>
                             <dt>Work owned</dt>
-                            <dd>[Identify the Sprint 2 artifacts or sections this member produced.]</dd>
+                            <dd>Developed the <a href="sprint-2/protect-and-track.html">Protect and track page</a>: risk EMVs, contingency and management reserves, the six-month spending plan, budget charts, and the full build request.</dd>
                             <dt>Work reviewed</dt>
-                            <dd>[Identify the artifacts or sections this member reviewed and describe that review.]</dd>
+                            <dd>Reviewed and revised the budget inputs, risk assumptions, and reserve calculations, using the team's final labor and non-labor figures.</dd>
                         </dl>
                     </article>
                 </div>
-                <h3>AI use disclosure</h3>
+                <p class="section-note"><strong>Contribution statement PDF:</strong> Not available yet. A download will be added when the document is complete.</p>
+            </section>
+
+            <section id="ai-use-disclosure" class="card doc-section" aria-labelledby="ai-use-disclosure-heading">
+                <h2 id="ai-use-disclosure-heading">AI use disclosure</h2>
                 <dl>
                     <dt>Tools used</dt>
-                    <dd>[List the AI tools used, if any.]</dd>
+                    <dd>Codex and ChatGPT for Edward's budget work; Gemini for syntax assistance reported by Cristina. Claude for finding links to real world sources for labor, non-labor, operational cost by Viviana.</dd>
                     <dt>PM AI Protocol Usage Phases</dt>
-                    <dd>[Describe where AI assisted the work and what phase it was used in.]</dd>
+                    <dd>Assistance with page development and summary refinement, plus drafting budget tables, checking calculations, and creating charts and the PDF for Protect and track.</dd>
                     <dt>Team review and revisions</dt>
-                    <dd>[Explain how the team reviewed and finalized the output.]</dd>
+                    <dd>The team reviewed the AI-assisted output, checked the budget calculations and assumptions, and refined the wording and presentation to align with the project.</dd>
                 </dl>
-                <p class="section-note"><strong>Contribution statement PDF:</strong> Not available yet. A download will be added when the document is complete.</p>
             </section>
         </div>
         <nav class="sprint-navigation" aria-label="Sprint navigation">
-            <a href="../index.html">← All sprints</a>
-            <a href="sprint-1.html">← Sprint 1</a>
+            <div class="sprint-nav-group">
+                <a href="../index.html">← All sprints</a>
+                <a href="sprint-1.html">← Sprint 1</a>
+            </div>
+            <a href="sprint-3.html">Sprint 3 →</a>
         </nav>
     </main>
     <footer class="container site-footer">

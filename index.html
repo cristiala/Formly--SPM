@@ -6,6 +6,7 @@
     <title>Home | Formly</title>
     <meta name="description" content="Formly's semester project portal: meet the team and follow the project sprint by sprint.">
     <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/theme.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,8 +18,14 @@
             <nav aria-label="Main navigation">
                 <a href="index.html" aria-current="page">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="sprints/sprint-1.html">Sprint 1</a>
-                <a href="sprints/sprint-2.html">Sprint 2</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="sprints/sprint-1.html">Sprint 1</a>
+                        <a href="sprints/sprint-2.html">Sprint 2</a>
+                        <a href="sprints/sprint-3.html">Sprint 3</a>
+                    </div>
+                </details>
             </nav>
         </div>
     </header>
@@ -42,7 +49,7 @@
                 <a class="card sprint-card" href="sprints/sprint-1.html">
                     <div class="card-top">
                         <span class="index">01</span>
-                        <span class="badge">Template</span>
+                        <span class="badge">Complete</span>
                     </div>
                     <h3>Sprint 1</h3>
                     <p>Gathering market research and defining the project scope.</p>
@@ -51,10 +58,19 @@
                 <a class="card sprint-card" href="sprints/sprint-2.html">
                     <div class="card-top">
                         <span class="index">02</span>
-                        <span class="badge">Template</span>
+                        <span class="badge">In progress</span>
                     </div>
                     <h3>Sprint 2</h3>
                     <p>Defining the project plan and estimating resources.</p>
+                    <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="card sprint-card" href="sprints/sprint-3.html">
+                    <div class="card-top">
+                        <span class="index">03</span>
+                        <span class="badge">Planned</span>
+                    </div>
+                    <h3>Sprint 3</h3>
+                    <p>Documenting the next phase of the project and the work that follows.</p>
                     <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
                 </a>
             </div>
