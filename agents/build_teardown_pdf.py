@@ -1,6 +1,6 @@
 """Render a Sprint 3 Markdown document as a site-ready PDF.
 
-Usage: python agents/build_teardown_pdf.py SOURCE.md OUTPUT.pdf
+Usage: python agents/build_teardown_pdf.py SOURCE.md OUTPUT.pdf [--credit NAME] [--compact]
 Supports headings, paragraphs, and unordered list items used by sprint documents.
 """
 
@@ -35,20 +35,20 @@ def inline_markup(value: str) -> str:
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", linked)
 
 
-def styles() -> dict[str, ParagraphStyle]:
+def styles(compact: bool = False) -> dict[str, ParagraphStyle]:
     base = dict(fontName="Helvetica", textColor=INK, alignment=TA_LEFT)
     return {
-        "title": ParagraphStyle("Title", **base, fontSize=22, leading=26, spaceAfter=12),
-        "heading": ParagraphStyle("Heading", **base, fontSize=13, leading=17, spaceBefore=15, spaceAfter=7, keepWithNext=True),
-        "subheading": ParagraphStyle("Subheading", **base, fontSize=11, leading=15, spaceBefore=10, spaceAfter=5, keepWithNext=True),
-        "body": ParagraphStyle("Body", **base, fontSize=9.5, leading=14, spaceAfter=7),
+        "title": ParagraphStyle("Title", **base, fontSize=22, leading=26, spaceAfter=8 if compact else 12),
+        "heading": ParagraphStyle("Heading", **base, fontSize=13, leading=17, spaceBefore=8 if compact else 15, spaceAfter=4 if compact else 7, keepWithNext=True),
+        "subheading": ParagraphStyle("Subheading", **base, fontSize=11, leading=15, spaceBefore=7 if compact else 10, spaceAfter=4 if compact else 5, keepWithNext=True),
+        "body": ParagraphStyle("Body", **base, fontSize=9.5, leading=14, spaceAfter=4 if compact else 7),
         "bullet": ParagraphStyle("Bullet", **base, fontSize=9.5, leading=14, leftIndent=18, firstLineIndent=-11, spaceAfter=4),
     }
 
 
-def story_from_markdown(source: Path) -> list:
+def story_from_markdown(source: Path, compact: bool = False) -> list:
     text = source.read_text(encoding="utf-8")
-    document_styles = styles()
+    document_styles = styles(compact)
     story = []
     paragraph_lines: list[str] = []
 
@@ -100,6 +100,7 @@ def main() -> None:
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--credit", default="Edward Puentes", help="PDF author and footer credit")
+    parser.add_argument("--compact", action="store_true", help="Use tighter spacing for a short document")
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     pdf = SimpleDocTemplate(
@@ -116,7 +117,7 @@ def main() -> None:
     def draw_frame(canvas, document) -> None:
         add_page_frame(canvas, document, args.credit)
 
-    pdf.build(story_from_markdown(args.source), onFirstPage=draw_frame, onLaterPages=draw_frame)
+    pdf.build(story_from_markdown(args.source, args.compact), onFirstPage=draw_frame, onLaterPages=draw_frame)
 
 
 if __name__ == "__main__":
