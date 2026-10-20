@@ -85,10 +85,10 @@
 </div>
 <aside aria-label="Section navigation" class="sprint-sidebar">
 <p class="eyebrow sidebar-label">On this page</p>
-<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#change-note">Change note</a><a class="section-link" href="#candidate-risk-entries">Candidate risk entries</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
+<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#competitor-teardown">Competitor Teardown</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
 </aside>
 </div>
-<nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← All Sprint 3 interviews</a></nav>
+<nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← Sprint 3 overview</a></nav>
 </main>
 <footer class="container site-footer">
 <span>Formly / Living Project Portal</span>
@@ -120,5 +120,8 @@
 
         sections.forEach((section) => observer.observe(section));
     </script>
-</body>
+<script>
+const sharedSections = ['change-note', 'candidate-risk-entries'];
+if (sharedSections.includes(location.hash.slice(1))) location.replace('team-research.html' + location.hash);
+</script></body>
 </html>
