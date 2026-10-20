@@ -44,45 +44,39 @@
                 <div class="sprint-sections">
                     <section id="evidence-log" class="card doc-section" aria-labelledby="evidence-log-heading">
                         <h2 id="evidence-log-heading">Evidence log</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Team</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - One row per interview or teardown.</span></div>
-                        </div>
+                        <p>One field interview led to a hands-on review of Hevy.</p>
+                        <div class="table-scroll" role="region" aria-label="Sprint 3 evidence log table" tabindex="0">
                         <table class="doc-table">
                             <thead>
                                 <tr>
                                     <th>Source</th>
                                     <th>Type</th>
                                     <th>Key takeaway</th>
+                                    <th>Document</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Interview 1</td>
+                                    <td>Interview X</td>
                                     <td>Customer</td>
-                                    <td></td>
+                                    <td>X rewatched a Romanian deadlift clip but still could not tell how to correct his form. Recording himself felt inconvenient and confusion added about 10-15 minutes to a workout.</td>
+                                    <td class="no-document">—</td>
                                 </tr>
                                 <tr>
-                                    <td>Interview 2</td>
-                                    <td>Customer</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Teardown</td>
+                                    <td>Hevy teardown</td>
                                     <td>Competitive review</td>
-                                    <td></td>
+                                    <td>Hevy logs workouts well and offers free exercise videos. The route to guidance was less intuitive, and the app did not give live feedback on the user's movement.</td>
+                                    <td><a class="button document-download" href="sprint-3/pdfs/edward-puentes-teardown-1.pdf" download="edward-puentes-teardown-1.pdf" aria-label="Download Edward Puentes Teardown 1 PDF"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/></svg><span>EP Doc</span></a></td>
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </section>
 
                     <section id="competitive-landscape" class="card doc-section" aria-labelledby="competitive-landscape-heading">
                         <h2 id="competitive-landscape-heading">Competitive Landscape</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Team</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - Map, comparison table, and ranked switching triggers.</span></div>
-                        </div>
-                        <p>Current offerings cluster around general fitness tracking, coaching subscriptions, and video-based workouts. Most do not combine live form correction with low-friction guidance.</p>
+                        <p>The team compared Hevy's workout logging and exercise videos with Formly's proposed form feedback. The interview and teardown show why seeing a demonstration may still leave a user unsure about their own movement.</p>
+                        <div class="table-scroll" role="region" aria-label="Hevy competitive comparison table" tabindex="0">
                         <table class="doc-table">
                             <thead>
                                 <tr>
@@ -93,74 +87,48 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>General fitness apps</td>
-                                    <td>Habit tracking and programs</td>
-                                    <td>Minimal live form feedback</td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
+                                    <td>Hevy</td>
+                                    <td>Useful free library, smooth workout logging, videos, polished UI, and no ads in the free experience</td>
+                                    <td>No live form correction; the path to guidance was not intuitive</td>
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </section>
 
                     <section id="change-note" class="card doc-section" aria-labelledby="change-note-heading">
                         <h2 id="change-note-heading">Change note</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Team</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - What changed in the business case, and why.</span></div>
-                        </div>
-                        <p><strong>What changed:</strong> .</p>
-                        <p><strong>Why:</strong> </p>
-                        <p><strong>Impact:</strong> </p>
+                        <p><strong>What changed:</strong> The team added evidence that feedback about a user's own movement may matter beyond showing exercise videos.</p>
+                        <p><strong>Why:</strong> The field interview and Hevy review showed that a video can be useful while still leaving a user unsure how to correct their form.</p>
+                        <p><strong>Impact:</strong> A next test could check whether timely cues help users adjust their form and whether camera setup is practical during a workout.</p>
                     </section>
 
                     <section id="candidate-risk-entries" class="card doc-section" aria-labelledby="candidate-risk-entries-heading">
                         <h2 id="candidate-risk-entries-heading">Candidate risk entries</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Team</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - 1 to 3 risks with trigger, owner, and mitigation.</span></div>
-                        </div>
                         <ul>
-                            <li><strong>(example)Risk 1:</strong> Inaccurate pose detection when lighting or camera angle is poor. <em>Owner:</em> Technical lead. <em>Mitigation:</em> calibration prompts and retry logic.</li>
-                            <li><strong>Risk 2:</strong>  <em>Owner:</em>  <em>Mitigation:</em> </li>
+                            <li><strong>Pose detection:</strong> Lighting or camera angle may reduce accuracy. <em>Suggested owner:</em> Technical lead. <em>Trigger to watch:</em> Repeated tracking failures in testing. <em>Possible mitigation:</em> Test calibration prompts and retry guidance.</li>
+                            <li><strong>Setup friction:</strong> Users may abandon a form check if positioning a phone interrupts their workout. <em>Suggested owner:</em> Product lead. <em>Trigger to watch:</em> Users skip setup in a gym trial. <em>Possible mitigation:</em> Test fewer setup steps and hands-free guidance.</li>
+                            <li><strong>Willingness to pay:</strong> A capable free workout tracker may make a second subscription hard to justify. <em>Suggested owner:</em> Business lead. <em>Trigger to watch:</em> Future interviewees reject the proposed price. <em>Possible mitigation:</em> Test pricing and Formly's value as a companion to existing trackers.</li>
                         </ul>
                     </section>
 
                     <section id="field-notes" class="card doc-section" aria-labelledby="field-notes-heading">
                         <h2 id="field-notes-heading">Field notes</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Individual</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - Your 2 interviews, tagged Behavior or Opinion.</span></div>
-                        </div>
-                        <p><strong>(example)Interview 1 — Behavior:</strong> The user corrected posture immediately when a cue appeared, suggesting low-latency guidance could be effective.</p>
-                        <p><strong>(example)Interview 2 — Opinion:</strong> Users prefer supporting, simple feedback over critical, technical explanations.</p>
+                        <p><strong>Participant X (one interview):</strong> X rewatched a Romanian deadlift video about three times but still could not tell what to change. He tried recording himself and once asked another gym-goer for help, but found phone setup inconvenient. He spent $0 on form help and estimated that the confusion added 10-15 minutes to his workout.</p>
                     </section>
 
                     <section id="contradiction-memo" class="card doc-section" aria-labelledby="contradiction-memo-heading">
                         <h2 id="contradiction-memo-heading">Contradiction memo</h2>
-                        <div class="doc-detail-list">
-                            <div class="doc-detail-row"><span class="label">Who</span><span> - Individual</span></div>
-                            <div class="doc-detail-row"><span class="label">Contents</span><span> - One page: a team assumption it contradicts, and your advice.</span></div>
-                        </div>
-                        <p><strong>Key contradiction:</strong> The team initially assumed </p>
-                        <p><strong>Recommendation:</strong> </p>
+                        <p><strong>Key contradiction:</strong> An exercise video does not always help a user understand whether their own movement is correct. X rewatched one several times and still could not identify what to change.</p>
+                        <p><strong>Recommendation:</strong> Test feedback on the user's movement while keeping setup simple enough for use during a workout.</p>
                     </section>
 
                     <section id="change-log" class="card doc-section" aria-labelledby="change-log-heading">
                         <h2 id="change-log-heading">Change log</h2>
-                        <p>[Add the sprint change log here.]</p>
                         <ul>
-                            <li><strong>What was revised from the prior sprint's version:</strong> </li>
-                            <li><strong>Why it was revised:</strong> </li>
-                            <li><strong>What downstream pages or documents were affected:</strong> </li>
+                            <li><strong>Since Sprint 2:</strong> The team added one field interview and a hands-on Hevy teardown.</li>
+                            <li><strong>Why:</strong> The findings clarified the gap between watching an exercise and correcting your own form.</li>
+                            <li><strong>Affected:</strong> The Sprint 3 summary, candidate risks, and teardown document.</li>
                         </ul>
                     </section>
 
@@ -199,9 +167,9 @@
                                 <h3>Edward</h3>
                                 <dl>
                                     <dt>Work owned</dt>
-                                    <dd>[Add contribution here.]</dd>
+                                    <dd>Conducted one field interview and completed Hevy Teardown #1.</dd>
                                     <dt>Work reviewed</dt>
-                                    <dd>[Add any review work here.]</dd>
+                                    <dd>Reviewed the Sprint 3 page for correctness and alignment with the plan, and proposed a download button beside teardown entries.</dd>
                                 </dl>
                             </article>
                         </div>
@@ -211,11 +179,11 @@
                         <h2 id="ai-use-disclosure-heading">AI use disclosure</h2>
                         <dl>
                             <dt>Tools used</dt>
-                            <dd>[Add the AI tools used here.]</dd>
+                            <dd>Codex assisted with page additions, PR requests, and PDF formatting for the new implementation.</dd>
                             <dt>PM AI Protocol Usage Phases</dt>
-                            <dd>[Add the phase and purpose of AI use here.]</dd>
+                            <dd>Drafting and presentation of Sprint 3 evidence and planning updates.</dd>
                             <dt>Team review and revisions</dt>
-                            <dd>[Add the team review and revision process here.]</dd>
+                            <dd>Edward and the team should confirm the interview notes and competitor details before submission.</dd>
                         </dl>
                     </section>
                 </div>

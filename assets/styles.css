@@ -161,9 +161,14 @@ dd { margin: 0; color: var(--muted); }
 .sprint-sections p, .sprint-sections li { color: var(--muted); }
 .sprint-sections li::marker { color: var(--accent); }
 .sprint-sections p:last-child { margin-bottom: 0; }
+.document-download { padding: 10px 14px; gap: 8px; font-size: 11px; letter-spacing: .06em; white-space: nowrap; }
+.document-download svg { width: 18px; height: 18px; flex: 0 0 auto; }
+#evidence-log table { min-width: 740px; }
+#evidence-log th:last-child, #evidence-log td:last-child { width: 120px; }
 
 .sprint-layout { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 18px; align-items: start; }
-.sprint-content { display: grid; gap: 18px; }
+.sprint-content { display: grid; gap: 18px; min-width: 0; }
+.sprint-content .sprint-sections, .sprint-content .card { min-width: 0; }
 .sprint-sidebar {
   position: sticky; top: 108px; align-self: start; width: 100%;
   border: none; background: transparent; padding: 0; margin-left: auto; margin-right: 0;
@@ -217,6 +222,17 @@ dd { margin: 0; color: var(--muted); }
  .section-heading, .site-footer { align-items: flex-start; flex-direction: column; }
  .card { padding: 24px; }
  .page-heading { padding-top: 40px; }
+ #evidence-log .table-scroll { overflow: visible; }
+ #evidence-log table { display: block; min-width: 0; }
+ #evidence-log thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+ #evidence-log tbody { display: grid; }
+ #evidence-log tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+ #evidence-log td { border: 0; padding: 0; }
+ #evidence-log td:first-child { grid-column: 1; grid-row: 1; color: var(--ink); font-weight: 700; }
+ #evidence-log td:nth-child(2) { grid-column: 1; grid-row: 2; color: var(--accent); font-size: 12px; }
+ #evidence-log td:nth-child(3) { grid-column: 1 / -1; grid-row: 3; padding-top: 6px; }
+ #evidence-log td:nth-child(4) { grid-column: 2; grid-row: 1 / span 2; width: auto; justify-self: end; }
+ #evidence-log td.no-document { display: none; }
 }
 @media (max-width: 380px) {
  .container { width: calc(100% - 32px); }
