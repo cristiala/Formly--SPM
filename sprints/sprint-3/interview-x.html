@@ -39,7 +39,53 @@
 </section>
 <div class="sprint-layout">
 <div class="sprint-content">
-<div class="sprint-sections"><section aria-labelledby="field-notes-heading" class="card doc-section" id="field-notes">
+<div class="sprint-sections"><section aria-labelledby="evidence-log-heading" class="card doc-section" id="evidence-log">
+<h2 id="evidence-log-heading">Evidence log</h2>
+<div aria-label="Sprint 3 evidence log table" class="table-scroll" role="region" tabindex="0">
+<table class="doc-table">
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Key takeaway</th>
+<th>Document</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interview X</td>
+<td>Customer</td>
+<td>X rewatched a Romanian deadlift clip but still could not tell how to correct his form. Recording himself felt inconvenient and confusion added about 10-15 minutes to a workout.</td>
+<td><a aria-label="Download Formly team Interview X PDF" class="button document-download" download="team-interview-x.pdf" href="pdfs/team-interview-x.pdf"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg><span>X Interview</span></a></td>
+</tr><tr>
+<td>Hevy teardown</td>
+<td>Competitive review</td>
+<td>Hevy logs workouts well and offers free exercise videos. The route to guidance was less intuitive, and the app did not give live feedback on the user's movement.</td>
+<td><a aria-label="Download Edward Puentes Teardown 1 PDF" class="button document-download" download="edward-puentes-teardown-1.pdf" href="pdfs/edward-puentes-teardown-1.pdf"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg><span>EP Doc</span></a></td>
+</tr></tbody>
+</table>
+</div>
+</section><section aria-labelledby="competitive-landscape-heading" class="card doc-section" id="competitive-landscape">
+<h2 id="competitive-landscape-heading">Competitive Landscape</h2>
+<p>The team compared Hevy's workout logging and exercise videos with Formly's proposed form feedback. The interview and teardown show why seeing a demonstration may still leave a user unsure about their own movement.</p>
+<div aria-label="Hevy competitive comparison table" class="table-scroll" role="region" tabindex="0">
+<table class="doc-table">
+<thead>
+<tr>
+<th>Product</th>
+<th>Strength</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hevy</td>
+<td>Useful free library, smooth workout logging, videos, polished UI, and no ads in the free experience</td>
+<td>No live form correction; the path to guidance was not intuitive</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section><section aria-labelledby="field-notes-heading" class="card doc-section" id="field-notes">
 <h2 id="field-notes-heading">Field notes</h2>
 <p><strong>Participant X (team interview)</strong></p>
 <ul>
@@ -50,11 +96,18 @@
 <h2 id="contradiction-memo-heading">Contradiction memo</h2>
 <p><strong>Key contradiction:</strong> An exercise video does not always help a user understand whether their own movement is correct. X rewatched one several times and still could not identify what to change.</p>
 <p><strong>Recommendation:</strong> Test feedback on the user's movement while keeping setup simple enough for use during a workout.</p>
+</section><section aria-labelledby="change-log-heading" class="card doc-section" id="change-log">
+<h2 id="change-log-heading">Change log</h2>
+<ul>
+<li><strong>Since Sprint 2:</strong> The team added Interview X notes and Edward's hands-on Hevy teardown.</li>
+<li><strong>Why:</strong> The findings clarified the gap between watching an exercise and correcting your own form.</li>
+<li><strong>Affected:</strong> The Sprint 3 summary, candidate risks, and teardown document.</li>
+</ul>
 </section></div>
 </div>
 <aside aria-label="Section navigation" class="sprint-sidebar">
 <p class="eyebrow sidebar-label">On this page</p>
-<nav class="section-nav"><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#competitor-teardown">Competitor Teardown</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a></nav>
+<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#competitor-teardown">Competitor Teardown</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
 </aside>
 </div>
 <nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← Sprint 3 overview</a></nav>
@@ -90,7 +143,7 @@
         sections.forEach((section) => observer.observe(section));
     </script>
 <script>
-const sharedSections = ['evidence-log', 'competitive-landscape', 'change-note', 'candidate-risk-entries', 'change-log'];
+const sharedSections = ['change-note', 'candidate-risk-entries'];
 if (sharedSections.includes(location.hash.slice(1))) location.replace('team-research.html' + location.hash);
 </script></body>
 </html>
