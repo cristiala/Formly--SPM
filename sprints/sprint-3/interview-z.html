@@ -33,20 +33,20 @@
 <main class="container sprint-page" id="main" tabindex="-1">
 <section class="page-heading">
 <p class="eyebrow">The project journal</p>
-<h1>Interview Z</h1>
-<p class="lead">The third team interview. Documents and supporting research are pending.</p>
-<div class="sprint-meta"><a href="../sprint-3.html">← All Sprint 3 interviews</a></div>
+<h1>Interview Z — Third Interview</h1>
+<p class="lead">The third interview and supporting research are pending.</p>
+<div class="sprint-meta"><a href="../sprint-3.html">← Sprint 3 overview</a><a href="team-research.html">Team Research &amp; Deliverables →</a></div>
 </section>
 <div class="sprint-layout">
 <div class="sprint-content">
-<div class="sprint-sections"><section aria-labelledby="evidence-log-heading" class="card doc-section" id="evidence-log"><h2 id="evidence-log-heading">Evidence log</h2><p>Pending. No Interview Z evidence log has been added.</p></section><section aria-labelledby="competitive-landscape-heading" class="card doc-section" id="competitive-landscape"><h2 id="competitive-landscape-heading">Competitive Landscape</h2><p>Pending. No Interview Z competitive landscape has been added.</p></section><section aria-labelledby="change-note-heading" class="card doc-section" id="change-note"><h2 id="change-note-heading">Change note</h2><p>Pending. No Interview Z change note has been added.</p></section><section aria-labelledby="candidate-risk-entries-heading" class="card doc-section" id="candidate-risk-entries"><h2 id="candidate-risk-entries-heading">Candidate risk entries</h2><p>Pending. No Interview Z candidate risk entries has been added.</p></section><section aria-labelledby="field-notes-heading" class="card doc-section" id="field-notes"><h2 id="field-notes-heading">Field notes</h2><p>Pending. No Interview Z field notes has been added.</p></section><section aria-labelledby="contradiction-memo-heading" class="card doc-section" id="contradiction-memo"><h2 id="contradiction-memo-heading">Contradiction memo</h2><p>Pending. No Interview Z contradiction memo has been added.</p></section><section aria-labelledby="change-log-heading" class="card doc-section" id="change-log"><h2 id="change-log-heading">Change log</h2><p>Pending. No Interview Z change log has been added.</p></section></div>
+<div class="sprint-sections"><section aria-labelledby="evidence-log-heading" class="card doc-section" id="evidence-log"><h2 id="evidence-log-heading">Evidence log</h2><p>Pending. No Interview Z evidence log has been added.</p></section><section aria-labelledby="competitive-landscape-heading" class="card doc-section" id="competitive-landscape"><h2 id="competitive-landscape-heading">Competitive Landscape</h2><p>Pending. No Interview Z competitive landscape has been added.</p></section><section aria-labelledby="field-notes-heading" class="card doc-section" id="field-notes"><h2 id="field-notes-heading">Field notes</h2><p>Pending. No Interview Z field notes has been added.</p></section><section aria-labelledby="competitor-teardown-heading" class="card doc-section" id="competitor-teardown"><h2 id="competitor-teardown-heading">Competitor Teardown</h2><p>Pending. No Interview Z competitor teardown has been added.</p></section><section aria-labelledby="contradiction-memo-heading" class="card doc-section" id="contradiction-memo"><h2 id="contradiction-memo-heading">Contradiction memo</h2><p>Pending. No Interview Z contradiction memo has been added.</p></section><section aria-labelledby="change-log-heading" class="card doc-section" id="change-log"><h2 id="change-log-heading">Change log</h2><p>Pending. No Interview Z change log has been added.</p></section></div>
 </div>
 <aside aria-label="Section navigation" class="sprint-sidebar">
 <p class="eyebrow sidebar-label">On this page</p>
-<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#change-note">Change note</a><a class="section-link" href="#candidate-risk-entries">Candidate risk entries</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
+<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#competitor-teardown">Competitor Teardown</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
 </aside>
 </div>
-<nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← All Sprint 3 interviews</a></nav>
+<nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← Sprint 3 overview</a></nav>
 </main>
 <footer class="container site-footer">
 <span>Formly / Living Project Portal</span>
@@ -78,5 +78,8 @@
 
         sections.forEach((section) => observer.observe(section));
     </script>
-</body>
+<script>
+const sharedSections = ['change-note', 'candidate-risk-entries'];
+if (sharedSections.includes(location.hash.slice(1))) location.replace('team-research.html' + location.hash);
+</script></body>
 </html>
