@@ -164,7 +164,7 @@ dd { margin: 0; color: var(--muted); }
 .document-download { padding: 10px 14px; gap: 8px; font-size: 11px; letter-spacing: .06em; white-space: nowrap; }
 .document-download svg { width: 18px; height: 18px; flex: 0 0 auto; }
 #evidence-log table { min-width: 740px; }
-#evidence-log th:last-child, #evidence-log td:last-child { width: 120px; }
+#evidence-log th:last-child, #evidence-log td:last-child { width: 150px; }
 
 .sprint-layout { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 18px; align-items: start; }
 .sprint-content { display: grid; gap: 18px; min-width: 0; }
