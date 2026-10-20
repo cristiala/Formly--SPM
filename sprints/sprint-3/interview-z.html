@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Interview Z | Sprint 3 | Formly</title>
+<meta content="Formly's semester project portal: meet the team and follow the project sprint by sprint." name="description"/>
+<link href="../../assets/styles.css" rel="stylesheet"/>
+<script src="../../assets/theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="../../index.html">
+<span aria-hidden="true" class="brand-mark">F</span>Formly<span class="brand-note">Project portal</span>
+</a>
+<nav aria-label="Main navigation">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About Us</a>
+<details class="nav-dropdown" open="">
+<summary>Sprints</summary>
+<div class="nav-dropdown-menu">
+<a href="../sprint-1.html">Sprint 1</a>
+<a href="../sprint-2.html">Sprint 2</a>
+<a aria-current="page" href="../sprint-3.html">Sprint 3</a>
+</div>
+</details>
+</nav>
+</div>
+</header>
+<main class="container sprint-page" id="main" tabindex="-1">
+<section class="page-heading">
+<p class="eyebrow">The project journal</p>
+<h1>Interview Z</h1>
+<p class="lead">The third team interview. Documents and supporting research are pending.</p>
+<div class="sprint-meta"><a href="../sprint-3.html">← All Sprint 3 interviews</a></div>
+</section>
+<div class="sprint-layout">
+<div class="sprint-content">
+<div class="sprint-sections"><section aria-labelledby="evidence-log-heading" class="card doc-section" id="evidence-log"><h2 id="evidence-log-heading">Evidence log</h2><p>Pending. No Interview Z evidence log has been added.</p></section><section aria-labelledby="competitive-landscape-heading" class="card doc-section" id="competitive-landscape"><h2 id="competitive-landscape-heading">Competitive Landscape</h2><p>Pending. No Interview Z competitive landscape has been added.</p></section><section aria-labelledby="change-note-heading" class="card doc-section" id="change-note"><h2 id="change-note-heading">Change note</h2><p>Pending. No Interview Z change note has been added.</p></section><section aria-labelledby="candidate-risk-entries-heading" class="card doc-section" id="candidate-risk-entries"><h2 id="candidate-risk-entries-heading">Candidate risk entries</h2><p>Pending. No Interview Z candidate risk entries has been added.</p></section><section aria-labelledby="field-notes-heading" class="card doc-section" id="field-notes"><h2 id="field-notes-heading">Field notes</h2><p>Pending. No Interview Z field notes has been added.</p></section><section aria-labelledby="contradiction-memo-heading" class="card doc-section" id="contradiction-memo"><h2 id="contradiction-memo-heading">Contradiction memo</h2><p>Pending. No Interview Z contradiction memo has been added.</p></section><section aria-labelledby="change-log-heading" class="card doc-section" id="change-log"><h2 id="change-log-heading">Change log</h2><p>Pending. No Interview Z change log has been added.</p></section></div>
+</div>
+<aside aria-label="Section navigation" class="sprint-sidebar">
+<p class="eyebrow sidebar-label">On this page</p>
+<nav class="section-nav"><a class="section-link" href="#evidence-log">Evidence log</a><a class="section-link" href="#competitive-landscape">Competitive Landscape</a><a class="section-link" href="#change-note">Change note</a><a class="section-link" href="#candidate-risk-entries">Candidate risk entries</a><a class="section-link" href="#field-notes">Field notes</a><a class="section-link" href="#contradiction-memo">Contradiction memo</a><a class="section-link" href="#change-log">Change log</a></nav>
+</aside>
+</div>
+<nav aria-label="Sprint navigation" class="sprint-navigation"><a href="../sprint-3.html">← All Sprint 3 interviews</a></nav>
+</main>
+<footer class="container site-footer">
+<span>Formly / Living Project Portal</span>
+<span>Software Project Management</span>
+</footer>
+<script>
+        const sections = document.querySelectorAll('.doc-section');
+        const links = document.querySelectorAll('.section-link');
+
+        const setActiveLink = (id) => {
+            links.forEach((link) => {
+                const active = link.getAttribute('href') === '#' + id;
+                link.classList.toggle('active', active);
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+            if (visible) {
+                setActiveLink(visible.target.id);
+            }
+        }, {
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: [0.2, 0.5, 0.8]
+        });
+
+        sections.forEach((section) => observer.observe(section));
+    </script>
+</body>
+</html>
