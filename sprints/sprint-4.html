@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formly Sprint 4 draft: initial model objectives, DORA metrics, incident response, and review template.">
+    <title>Sprint 4 | Formly</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../assets/theme.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span></a>
+            <nav aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About Us</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="sprint-1.html">Sprint 1</a>
+                        <a href="sprint-2.html">Sprint 2</a>
+                        <a href="sprint-3.html">Sprint 3</a>
+                        <a href="sprint-4.html" aria-current="page">Sprint 4</a>
+                    </div>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container sprint-page" id="main" tabindex="-1">
+        <section class="page-heading sprint4-heading" aria-labelledby="page-title">
+            <p class="eyebrow">The project journal / Service levels</p>
+            <h1 id="page-title">Sprint 4</h1>
+            <p class="lead">Set honest targets for Formly's first form-feedback model, then define how the team will measure delivery and respond when something goes wrong.</p>
+            <div class="sprint-meta"><span>Initial build for team review</span><span>Targets proposed, not measured</span></div>
+        </section>
+
+        <div class="sprint-sections sprint4-sections">
+            <section class="card doc-section" id="measurement-scope" aria-labelledby="measurement-scope-heading">
+                <p class="eyebrow">01 / Read this first</p>
+                <h2 id="measurement-scope-heading">What these targets mean</h2>
+                <p>These are <strong>proposed objectives for the initial machine learning model</strong>. They are not claims about a working product. The 85% and 80% targets allow room for early model variation while giving the team clear thresholds to test against.</p>
+                <p>Model quality and service health need separate measures. The objectives below judge the guidance Formly gives. The team should also record whether a form check starts, completes, and returns a result, without treating a server or camera failure as a model-quality miss.</p>
+                <p class="section-note">This separation follows <a href="https://docs.cloud.google.com/architecture/framework/perspectives/ai-ml/reliability">Google Cloud's AI/ML reliability guidance</a>.</p>
+                <div class="sprint4-callout">
+                    <strong>Before reporting a score:</strong> name the measurement owners, approve the review rubric and labeled cases, collect a representative sample, and record the sample size. If there are too few reviewed cases, report “insufficient data.”
+                </div>
+            </section>
+
+            <section class="card doc-section" id="model-objectives" aria-labelledby="model-objectives-heading">
+                <p class="eyebrow">02 / Service level objectives</p>
+                <h2 id="model-objectives-heading">Two initial model objectives</h2>
+                <p>Each objective uses a rolling 28-day window once testing begins. The worked budgets below use 200 eligible cases <em>only to illustrate the count</em>; the actual allowance changes with the number evaluated. Allowed misses = floor(eligible cases × (100 − target percentage) ÷ 100).</p>
+
+                <div class="sprint4-objectives">
+                    <article class="sprint4-objective" aria-labelledby="useful-guidance-heading">
+                        <div class="sprint4-objective-top"><span class="sprint4-number">01</span><span class="sprint4-target">85% target</span></div>
+                        <h3 id="useful-guidance-heading">Useful guidance</h3>
+                        <p class="sprint4-definition">At least 85% of reviewed completed form checks should give a cue a reviewer can understand and act on, with no clear safety concern under the team's written rubric.</p>
+                        <dl class="sprint4-facts">
+                            <div><dt>Measure</dt><dd>Checks passing the rubric ÷ completed checks reviewed</dd></div>
+                            <div><dt>Source</dt><dd>Sampled check outputs and reviewer decisions</dd></div>
+                            <div><dt>Owner</dt><dd>Model quality owner — name to assign</dd></div>
+                            <div><dt>Window</dt><dd>Rolling 28 days after testing starts</dd></div>
+                        </dl>
+                        <div class="sprint4-budget"><span>Error budget example</span><strong>30 misses</strong><small>Of 200 reviewed checks; 170 must pass.</small></div>
+                        <h4>Budget policy</h4>
+                        <p>At 15 misses in the example window, the model quality owner reviews failed cues and assigns a fix within one working day, telling the team lead and test owner the same day. At 30 misses, that owner pauses model changes that could worsen guidance, notifies those people immediately, and agrees on a recovery plan with them within one working day.</p>
+                    </article>
+
+                    <article class="sprint4-objective" aria-labelledby="issue-detection-heading">
+                        <div class="sprint4-objective-top"><span class="sprint4-number">02</span><span class="sprint4-target">80% target</span></div>
+                        <h3 id="issue-detection-heading">Issue detection</h3>
+                        <p class="sprint4-definition">At least 80% of labeled cases that contain a target form issue should have that issue flagged by the model. This measures recall on known issues.</p>
+                        <dl class="sprint4-facts">
+                            <div><dt>Measure</dt><dd>Unique cases with the target issue correctly flagged ÷ unique labeled cases with that issue</dd></div>
+                            <div><dt>Source</dt><dd>Labeled checks from the window, their outputs, and served model versions</dd></div>
+                            <div><dt>Owner</dt><dd>Evaluation owner — name to assign</dd></div>
+                            <div><dt>Window</dt><dd>Rolling 28 days after testing starts</dd></div>
+                        </dl>
+                        <div class="sprint4-budget"><span>Error budget example</span><strong>40 misses</strong><small>Of 200 labeled issue cases; 160 must be flagged.</small></div>
+                        <h4>Budget policy</h4>
+                        <p>At 20 missed issues in the example window, the evaluation owner checks missed cases by exercise, camera angle, and lighting within one working day, telling the model owner and team lead the same day. At 40 misses, the evaluation owner pauses expansion to new exercises, notifies those people immediately, and agrees on a retraining or scope plan with them within one working day.</p>
+                    </article>
+                </div>
+                <p class="section-note">The 50% and 100% triggers above should be recalculated from the actual budget when the evaluated case count differs from 200. A reviewer must approve the case labels and rubric before either percentage is published.</p>
+                <p class="section-note">Method reference: <a href="https://sre.google/workbook/error-budget-policy/">Google SRE's error-budget policy</a>.</p>
+            </section>
+
+            <section class="card doc-section" id="dora-metrics" aria-labelledby="dora-metrics-heading">
+                <p class="eyebrow">03 / Delivery performance</p>
+                <h2 id="dora-metrics-heading">DORA metrics</h2>
+                <p>Track delivery of the <strong>planned Formly app</strong>, not edits to this project portal. The five measures below are definitions and collection plans. Values stay “Not yet measured” until an app deployment pipeline and incident record exist.</p>
+                <div class="table-scroll" role="region" aria-label="DORA metrics table" tabindex="0">
+                    <table class="sprint4-table sprint4-dora-table">
+                        <caption class="visually-hidden">Formly app DORA metric definitions and planned data sources</caption>
+                        <thead><tr><th scope="col">Metric</th><th scope="col">Definition</th><th scope="col">Planned source</th><th scope="col">Status</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Deployment frequency</th><td>How often a change reaches the app's production environment</td><td>Deployment log</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Change lead time</th><td>Time from code commit to production deployment</td><td>Commit and deployment timestamps</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Change fail rate</th><td>Share of production deployments that need immediate remediation</td><td>Deployments and incident log</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Failed deployment recovery time</th><td>Time to restore service after a failed deployment</td><td>Incident timeline and recovery record</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Deployment rework rate</th><td>Share of deployments that were unplanned fixes to a production problem</td><td>Deployment tags and incident links</td><td>Not yet measured</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="section-note">Collection owner: app delivery owner — name to assign. Proposed reporting window: rolling 28 days after the first production deployment. Keep the raw event counts beside each rate.</p>
+                <p class="section-note">Definitions reference: <a href="https://dora.dev/guides/dora-metrics/">DORA's metrics guide</a>.</p>
+            </section>
+
+            <section class="card doc-section" id="incident-response" aria-labelledby="incident-response-heading">
+                <p class="eyebrow">04 / Responding to failure</p>
+                <h2 id="incident-response-heading">Three severity levels</h2>
+                <p>Times below are targets for <strong>acknowledging and beginning triage</strong>, not promises to fix an incident within that time. The examples are drafts for team review.</p>
+                <div class="table-scroll" role="region" aria-label="Incident severity table" tabindex="0">
+                    <table class="sprint4-table">
+                        <caption class="visually-hidden">Draft severity levels, examples, and response times</caption>
+                        <thead><tr><th scope="col">Level</th><th scope="col">Formly example</th><th scope="col">Response target</th><th scope="col">First action</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">SEV 1 / Critical</th><td>Repeated potentially unsafe correction, or exposure of a user's video or account data</td><td>15 minutes</td><td>Stop the affected guidance or access path; start an incident log.</td></tr>
+                            <tr><th scope="row">SEV 2 / Major</th><td>Form checks broadly fail or a model update sharply degrades feedback for an exercise</td><td>1 hour</td><td>Assess affected users, consider rollback, and record the decision.</td></tr>
+                            <tr><th scope="row">SEV 3 / Limited</th><td>An isolated check fails but retry or alternate guidance works</td><td>1 working day</td><td>Record the case, owner, and next test or fix.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>This sprint's role holders</h3>
+                <div class="sprint4-role-grid">
+                    <div><strong>Incident lead</strong><span>Name to assign</span><small>Coordinates triage and severity changes.</small></div>
+                    <div><strong>Model investigator</strong><span>Name to assign</span><small>Examines input, output, and model version.</small></div>
+                    <div><strong>Communications owner</strong><span>Name to assign</span><small>Updates the team and affected users when needed.</small></div>
+                </div>
+                <p class="section-note">The team must assign people and an alert channel before treating these response targets as operational commitments.</p>
+            </section>
+
+            <section class="card doc-section" id="incident-review" aria-labelledby="incident-review-heading">
+                <p class="eyebrow">05 / Learning from incidents</p>
+                <h2 id="incident-review-heading">Blameless incident review</h2>
+                <p class="sprint4-pending">Template awaiting a real incident</p>
+                <p>Use this after an actual incident. Describe the conditions and decisions using evidence available at the time; do not assign personal blame. This section does not claim that a review has already happened.</p>
+                <ol class="sprint4-review-list">
+                    <li><strong>Summary</strong><span>What happened, when, and what was restored?</span></li>
+                    <li><strong>Impact</strong><span>Which users, exercises, and checks were affected? For how long?</span></li>
+                    <li><strong>Timeline</strong><span>What did logs and team messages show, in time order?</span></li>
+                    <li><strong>Causes</strong><span>Which model, data, code, process, or environment conditions contributed?</span></li>
+                    <li><strong>Response</strong><span>What actions helped, and where did detection or coordination slow down?</span></li>
+                    <li><strong>Action items</strong><span>List a concrete change, owner, due date, and verification for each item.</span></li>
+                </ol>
+            </section>
+
+            <section class="card doc-section" id="team-review" aria-labelledby="team-review-heading">
+                <p class="eyebrow">06 / Review record</p>
+                <h2 id="team-review-heading">What the team still needs to decide</h2>
+                <ul>
+                    <li>Approve or revise the two draft model targets and the evaluation sample.</li>
+                    <li>Name the measurement, delivery, and incident role holders.</li>
+                    <li>Approve the rubric, labeled cases, alert channel, and budget actions.</li>
+                    <li>Replace “Not yet measured” only when source data exists; complete the incident review after a real event.</li>
+                </ul>
+                <p><strong>AI use disclosure:</strong> Codex assisted with the initial page structure and draft wording. The team must review all targets, examples, role assignments, and claims before treating this as an approved sprint record.</p>
+            </section>
+        </div>
+
+        <nav class="sprint-navigation" aria-label="Sprint navigation">
+            <a href="sprint-3.html">← Sprint 3</a>
+            <a href="../index.html">All sprints →</a>
+        </nav>
+    </main>
+    <footer class="container site-footer"><span>Formly / Living Project Portal</span><span>Software Project Management</span></footer>
+</body>
+</html>
