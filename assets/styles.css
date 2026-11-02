@@ -327,12 +327,11 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-review-list li { display: grid; gap: 8px; align-content: start; padding: 16px; background: var(--surface-2); border: 1px solid var(--line); counter-increment: review; }
 .sprint4-review-list li::before { content: "0" counter(review); color: var(--accent); font: 24px/1 var(--display); }
 .sprint4-review-list span { color: var(--muted); }
-.sprint4-app-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
 .sprint4-app-card { min-width: 0; padding: 20px; border: 1px solid var(--line); background: var(--surface-2); }
 .sprint4-app-card h3 { margin: 8px 0 16px; }
 .sprint4-app-card .eyebrow { margin-bottom: 8px; }
 .sprint4-app-card p:last-child { margin-bottom: 0; }
-.sprint4-landing { grid-column: 1 / -1; }
+.sprint4-landing { margin-top: 24px; }
 .sprint4-landing-body { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: start; }
 .sprint4-landing-body ul { padding-left: 20px; }
 .sprint4-landing-body li + li { margin-top: 8px; }
@@ -342,7 +341,7 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 @media (max-width: 900px) {
   .sprint4-objectives { grid-template-columns: 1fr; }
   .sprint4-definition { min-height: 0; }
-  .sprint4-app-grid, .sprint4-landing-body { grid-template-columns: 1fr; }
+  .sprint4-landing-body { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .sprint4-role-grid, .sprint4-review-list { grid-template-columns: 1fr; }
