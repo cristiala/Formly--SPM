@@ -339,6 +339,7 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-wireframe-placeholder strong { color: var(--ink); }
 .sprint4-wireframe-placeholder img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 320px; object-fit: contain; border: 1px solid var(--line); background: #fff; }
 .sprint4-landing .sprint4-wireframe-placeholder { min-height: 290px; }
+.sprint4-home-wireframe img { max-height: none; }
 @media (max-width: 900px) {
   .sprint4-objectives { grid-template-columns: 1fr; }
   .sprint4-definition { min-height: 0; }
