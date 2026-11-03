@@ -38,19 +38,8 @@
         </section>
 
         <div class="sprint-sections sprint4-sections">
-            <section class="card doc-section" id="measurement-scope" aria-labelledby="measurement-scope-heading">
-                <p class="eyebrow">01 / Read this first</p>
-                <h2 id="measurement-scope-heading">What these targets mean</h2>
-                <p>These are <strong>proposed objectives for the initial machine learning model</strong>. They are not claims about a working product. The 85% and 80% targets allow room for early model variation while giving the team clear thresholds to test against.</p>
-                <p>Model quality and service health need separate measures. The objectives below judge the guidance Formly gives. The team should also record whether a form check starts, completes, and returns a result, without treating a server or camera failure as a model-quality miss.</p>
-                <p class="section-note">This separation follows <a href="https://docs.cloud.google.com/architecture/framework/perspectives/ai-ml/reliability">Google Cloud's AI/ML reliability guidance</a>.</p>
-                <div class="sprint4-callout">
-                    <strong>Before reporting a score:</strong> name the measurement owners, approve the review rubric and labeled cases, collect a representative sample, and record the sample size. If there are too few reviewed cases, report “insufficient data.”
-                </div>
-            </section>
-
             <section class="card doc-section" id="model-objectives" aria-labelledby="model-objectives-heading">
-                <p class="eyebrow">02 / Service level objectives</p>
+                <p class="eyebrow">01 / Service level objectives</p>
                 <h2 id="model-objectives-heading">Two initial model objectives</h2>
                 <p>Each objective uses a rolling 28-day window once testing begins. The worked budgets below use 200 eligible cases <em>only to illustrate the count</em>; the actual allowance changes with the number evaluated. Allowed misses = floor(eligible cases × (100 − target percentage) ÷ 100).</p>
 
@@ -90,7 +79,7 @@
             </section>
 
             <section class="card doc-section" id="dora-metrics" aria-labelledby="dora-metrics-heading">
-                <p class="eyebrow">03 / Delivery performance</p>
+                <p class="eyebrow">02 / Delivery performance</p>
                 <h2 id="dora-metrics-heading">DORA metrics</h2>
                 <p>Track releases of the <strong>Formly app to pilot or production users</strong>, not edits to this project portal. These four requested DORA measures have proposed starting targets for a small student team. They are planning goals, not measured results or industry benchmarks.</p>
                 <div class="table-scroll" role="region" aria-label="DORA metrics table" tabindex="0">
@@ -99,13 +88,13 @@
                         <thead><tr><th scope="col">Metric</th><th scope="col">Initial plan</th><th scope="col">How to measure it</th><th scope="col">Current status</th></tr></thead>
                         <tbody>
                             <tr class="sprint4-dora-group"><th scope="rowgroup" colspan="4">Speed / Throughput</th></tr>
-                            <tr><th scope="row">Deployment frequency</th><td>At least one successful user-facing app release per two-week sprint.</td><td>Count successful releases in the deployment log; record the date and version.</td><td>Not yet measured</td></tr>
-                            <tr><th scope="row">Lead time for changes</th><td>Median of no more than five working days from code commit to user-facing release.</td><td>Match each released change's commit timestamp to its deployment timestamp.</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Deployment frequency</th><td>At least one successful user-facing app release per two-week sprint.</td><td>Count successful releases in the deployment log; record the date and version.</td><td>Planned target; not yet measured</td></tr>
+                            <tr><th scope="row">Lead time for changes</th><td>Median of no more than five working days from code commit to user-facing release.</td><td>Match each released change's commit timestamp to its deployment timestamp.</td><td>Planned target; not yet measured</td></tr>
                         </tbody>
                         <tbody>
                             <tr class="sprint4-dora-group"><th scope="rowgroup" colspan="4">Stability / Quality</th></tr>
-                            <tr><th scope="row">Change failure rate</th><td>No more than 25% of app releases require an urgent hotfix, rollback, or fix-forward for a user-visible failure.</td><td>Divide affected releases by all user-facing releases; link each failure to an incident record.</td><td>Not yet measured</td></tr>
-                            <tr><th scope="row">Time to restore service (MTTR)</th><td>Mean recovery time of no more than one working day (eight working hours) for deployment-caused incidents.</td><td>Record the first known user-visible failure and verified restoration for each incident, then calculate the mean.</td><td>Not yet measured</td></tr>
+                            <tr><th scope="row">Change failure rate</th><td>No more than 25% of app releases require an urgent hotfix, rollback, or fix-forward for a user-visible failure.</td><td>Divide affected releases by all user-facing releases; link each failure to an incident record.</td><td>Planned target; not yet measured</td></tr>
+                            <tr><th scope="row">Time to restore service (MTTR)</th><td>Mean recovery time of no more than one working day (eight working hours) for deployment-caused incidents.</td><td>Record the first known user-visible failure and verified restoration for each incident, then calculate the mean.</td><td>Planned target; not yet measured</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -115,7 +104,7 @@
             </section>
 
             <section class="card doc-section" id="incident-response" aria-labelledby="incident-response-heading">
-                <p class="eyebrow">04 / Responding to failure</p>
+                <p class="eyebrow">03 / Responding to failure</p>
                 <h2 id="incident-response-heading">Three severity levels</h2>
                 <p>Times below are targets for <strong>acknowledging and beginning triage</strong>, not promises to fix an incident within that time. The examples are drafts for team review.</p>
                 <div class="table-scroll" role="region" aria-label="Incident severity table" tabindex="0">
@@ -153,20 +142,16 @@
                 </ol>
             </section>
 
-            <section class="card doc-section" id="team-review" aria-labelledby="team-review-heading">
-                <p class="eyebrow">06 / Review record</p>
-                <h2 id="team-review-heading">What the team still needs to decide</h2>
-                <ul>
-                    <li>Approve or revise the two draft model targets and the evaluation sample.</li>
-                    <li>Name the measurement, delivery, and incident role holders.</li>
-                    <li>Approve the rubric, labeled cases, alert channel, and budget actions.</li>
-                    <li>Replace “Not yet measured” only when source data exists; replace the hypothetical incident exercise with an evidence-based review after a real event.</li>
-                </ul>
-            </section>
         </div>
 
         <nav class="sprint-navigation" aria-label="Sprint navigation">
-            <a href="../sprint-4.html">← Sprint 4 overview</a>
+            <div class="sprint-nav-group sprint-nav-stack" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px;">
+                <a class="button document-download" href="pdfs/service-levels.pdf" download="service-levels.pdf" aria-label="Download Service Levels PDF">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                    <span>Download PDF</span>
+                </a>
+                <a href="../sprint-4.html">← Sprint 4 overview</a>
+            </div>
             <a href="app-sections.html">App Sections →</a>
         </nav>
     </main>
