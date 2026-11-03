@@ -318,6 +318,7 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-table { min-width: 730px; }
 .sprint4-table tbody th { color: var(--ink); font-weight: 700; }
 .sprint4-dora-table td:last-child { white-space: nowrap; }
+.sprint4-dora-group th { background: var(--surface-2); color: var(--accent) !important; font: 800 12px/1.4 var(--body); letter-spacing: .1em; text-transform: uppercase; }
 .sprint4-role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .sprint4-role-grid div { display: grid; align-content: start; gap: 6px; padding: 16px; border: 1px solid var(--line); background: var(--surface-2); }
 .sprint4-role-grid span { color: var(--accent); font-weight: 700; }
@@ -339,6 +340,7 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-wireframe-placeholder strong { color: var(--ink); }
 .sprint4-wireframe-placeholder img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 320px; object-fit: contain; border: 1px solid var(--line); background: #fff; }
 .sprint4-landing .sprint4-wireframe-placeholder { min-height: 290px; }
+.sprint4-home-wireframe img { max-height: none; }
 @media (max-width: 900px) {
   .sprint4-objectives { grid-template-columns: 1fr; }
   .sprint4-definition { min-height: 0; }
