@@ -333,8 +333,36 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-app-card h3 { margin: 8px 0 16px; }
 .sprint4-app-card .eyebrow { margin-bottom: 8px; }
 .sprint4-app-card p:last-child { margin-bottom: 0; }
+.sprint4-view-toggle { display: inline-flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+.sprint4-view-button {
+  appearance: none; border: 1px solid var(--line); background: transparent; color: var(--muted);
+  padding: 8px 14px; font: 800 11px/1.4 var(--body); text-transform: uppercase; letter-spacing: .12em;
+  cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.sprint4-view-button.is-active {
+  background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+}
+.sprint4-view-button:hover { border-color: var(--accent); color: var(--ink); }
+.sprint4-view-shell { display: block; }
+.sprint4-view-shell .sprint4-view-wireframe { display: none; }
+.sprint4-view-shell .sprint4-view-sketch { display: flex !important; }
+.sprint4-view-shell[data-view="wireframe"] .sprint4-view-wireframe { display: none; }
+.sprint4-view-shell[data-view="wireframe"] .sprint4-view-sketch { display: flex !important; }
+.sprint4-view-shell[data-view="wireframe"] .sprint4-view-wireframe .sprint4-wireframe-visual { max-width: 100%; }
 .sprint4-landing { margin-top: 24px; }
-.sprint4-landing-body { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: start; }
+.sprint4-landing-body {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 24px !important;
+}
+.sprint4-landing-body > * { min-width: 0; }
+.sprint4-landing-body > .sprint4-wireframe-placeholder {
+  flex: 0 0 46% !important;
+  max-width: 46% !important;
+}
+.sprint4-landing-body > div:last-child {
+  flex: 1 1 0 !important;
+}
 .sprint4-landing-body ul { padding-left: 20px; }
 .sprint4-landing-body li + li { margin-top: 8px; }
 .sprint4-wireframe-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 180px; padding: 20px; border: 2px dashed var(--line); text-align: center; color: var(--muted); background: var(--surface); }
@@ -342,6 +370,29 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-wireframe-placeholder img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 320px; object-fit: contain; border: 1px solid var(--line); background: #fff; }
 .sprint4-landing .sprint4-wireframe-placeholder { min-height: 290px; }
 .sprint4-home-wireframe img { max-height: none; }
+.sprint4-wireframe-visual {
+  display: grid; gap: 12px; width: 100%; min-height: 290px; padding: 16px; border: 2px dashed var(--line); background: var(--surface);
+}
+.sprint4-wireframe-template { display: grid; gap: 12px; }
+.sprint4-wireframe-template .sprint4-wireframe-panel {
+  border: 1px solid var(--line); background: rgba(255,255,255,0.04); min-height: 16px;
+}
+.sprint4-wireframe-template .sprint4-wireframe-panel.sprint4-wireframe-header { min-height: 30px; }
+.sprint4-wireframe-template .sprint4-wireframe-panel.sprint4-wireframe-nav { min-height: 24px; }
+.sprint4-wireframe-template .sprint4-wireframe-panel.sprint4-wireframe-card { min-height: 78px; }
+.sprint4-wireframe-template .sprint4-wireframe-panel.sprint4-wireframe-hero { min-height: 250px; }
+.sprint4-wireframe-single {
+  display: block;
+  min-height: 300px;
+}
+.sprint4-wireframe-single .sprint4-wireframe-panel {
+  width: 100%; min-height: 280px; background: rgba(255,255,255,0.02);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font: 800 12px/1.4 var(--body); text-transform: uppercase; letter-spacing: .12em;
+}
+.sprint4-wireframe-single .sprint4-wireframe-panel--compact {
+  min-height: 220px;
+}
 @media (max-width: 900px) {
   .sprint4-objectives { grid-template-columns: 1fr; }
   .sprint4-definition { min-height: 0; }
