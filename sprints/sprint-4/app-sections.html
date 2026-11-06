@@ -38,15 +38,28 @@
         </section>
 
         <div class="sprint-sections sprint4-sections">
+            <div class="sprint4-view-toggle" aria-label="Design view filter">
+                <button class="sprint4-view-button" type="button" data-view="wireframe">Wireframe</button>
+                <button class="sprint4-view-button is-active" type="button" data-view="sketch">Sketch</button>
+            </div>
+
+            <article class="card sprint4-wireframe-card sprint4-view-shell" data-view="wireframe" aria-labelledby="wireframe-overview-heading" style="display:none;">
+                <p class="eyebrow">Wireframe</p>
+                <h2 id="wireframe-overview-heading">Wireframe</h2>
+                <div class="sprint4-wireframe-visual sprint4-wireframe-single">
+                    <div class="sprint4-wireframe-panel sprint4-wireframe-panel--compact">Wireframe</div>
+                </div>
+            </article>
+
             <section class="card doc-section" id="app-page-designs" aria-labelledby="app-page-designs-heading">
                 <p class="eyebrow">01 / Home page</p>
                 <h2 id="app-page-designs-heading">Home / Landing design</h2>
                 <p>The hand-drawn Home sketch shows how users find exercises, return to recent activity, and open saved exercise records. The other destinations in its bottom navigation are shown here only as labels; their page layouts are not drafted yet.</p>
 
-                <article class="sprint4-app-card sprint4-landing" aria-labelledby="landing-page-heading">
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="landing-page-heading">
                     <p class="eyebrow">Page 01 / Entry screen</p>
                     <h3 id="landing-page-heading">Home / Landing</h3>
-                    <div class="sprint4-landing-body">
+                    <div class="sprint4-landing-body sprint4-view-sketch">
                         <div class="sprint4-wireframe-placeholder sprint4-home-wireframe">
                             <img src="pdfs/HomePage_Sketch.png" alt="Hand-drawn Home page sketch showing a welcome and camera controls, exercise search, three recent exercise rows, a stored exercises list, and Home, Stored, PT Chat, and Settings navigation.">
                         </div>
@@ -76,10 +89,10 @@
                 <h2 id="app-feedback-design-heading">Feedback design</h2>
                 <p>This section focuses on the corrective guidance a user sees after a movement check is captured, from the live form issue to the quick evaluation state.</p>
 
-                <article class="sprint4-app-card sprint4-landing" aria-labelledby="feedback-page-heading">
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="feedback-page-heading">
                     <p class="eyebrow">Page 02 / Form check</p>
                     <h3 id="feedback-page-heading">Feedback Page Design</h3>
-                    <div class="sprint4-landing-body">
+                    <div class="sprint4-landing-body sprint4-view-sketch">
                         <div class="sprint4-wireframe-placeholder">
                             <img src="pdfs/FeedbackPage_Sketch.jpg" alt="Feedback page sketch" />
                         </div>
@@ -108,10 +121,10 @@
                 <h2 id="app-personal-trainer-design-heading">Personal Trainer design</h2>
                 <p>This section focuses on a one-on-one session between the user and a personal trainer where the trainer evaluates the form of the user and gives more tailored feedback, answers any questions the user may have, and overall helps the user understand where things may have gone wrong or right.</p>
 
-                <article class="sprint4-app-card sprint4-landing" aria-labelledby="personal-trainer-page-heading">
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="personal-trainer-page-heading">
                     <p class="eyebrow">Page 03 / Personal Trainer</p>
                     <h3 id="personal-trainer-page-heading">Personal Trainer Page Design</h3>
-                    <div class="sprint4-landing-body">
+                    <div class="sprint4-landing-body sprint4-view-sketch">
                         <div class="sprint4-wireframe-placeholder">
                             <img src="pdfs/Personal_trainer_sketch.png" alt="personal trainer page sketch" />
                         </div>
@@ -140,10 +153,10 @@
                 <h2 id="app-stored-exercises-design-heading">Stored Exercises Page Design</h2>
                 <p>This section focuses on how users can access their previously saved exercises, recordings, and form feedback. The page allows users to review past workouts and revisit their feedback without having to repeat an exercise check.</p>
 
-                <article class="sprint4-app-card sprint4-landing" aria-labelledby="stored-exercises-page-heading">
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="stored-exercises-page-heading">
                     <p class="eyebrow">Page 04 / Saved exercise history</p>
                     <h3 id="stored-exercises-page-heading">Page Description</h3>
-                    <div class="sprint4-landing-body">
+                    <div class="sprint4-landing-body sprint4-view-sketch">
                         <div class="sprint4-wireframe-placeholder">
                             <img src="pdfs/StoredExercises_Sketch.png" alt="Hand-drawn Stored Exercises page with a cloud icon, search saved exercises field, squat, bicep curl and lunge history entries with dates and saved feedback, sort by date, and Home, Stored, PT Chat and Settings navigation." loading="lazy">
                         </div>
@@ -171,6 +184,37 @@
             </section>
 
         </div>
+
+        <script>
+            const wireframeCard = document.querySelector('.sprint4-wireframe-card');
+            const appCards = document.querySelectorAll('.sprint4-app-card');
+            const sections = document.querySelectorAll('.doc-section');
+
+            document.querySelectorAll('.sprint4-view-toggle').forEach((group) => {
+                const buttons = group.querySelectorAll('.sprint4-view-button');
+                if (!buttons.length) return;
+
+                buttons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        const view = button.dataset.view;
+
+                        buttons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
+
+                        if (wireframeCard) {
+                            wireframeCard.style.display = view === 'wireframe' ? 'block' : 'none';
+                        }
+
+                        appCards.forEach((card) => {
+                            card.style.display = view === 'wireframe' ? 'none' : 'block';
+                        });
+
+                        sections.forEach((section) => {
+                            section.style.display = view === 'wireframe' ? 'none' : 'block';
+                        });
+                    });
+                });
+            });
+        </script>
 
         <nav class="sprint-navigation" aria-label="Sprint navigation">
             <a href="../sprint-4.html">← Sprint 4 overview</a>
