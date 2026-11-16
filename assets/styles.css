@@ -126,6 +126,59 @@ h3 { font-size: 28px; margin: 24px 0 12px; }
   transition: transform .15s ease, background .15s ease;
 }
 .button:hover { background: var(--white); transform: translateX(4px); }
+.memo-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  background: var(--surface); border: 1px solid var(--line); padding: 24px 28px; margin: 0 0 26px;
+}
+.memo-banner .eyebrow { margin-bottom: 8px; }
+.memo-banner h3 { margin: 0; font-size: clamp(22px, 3vw, 32px); }
+.pdf-page { padding: 36px 0 48px; }
+.pdf-page-header {
+  display: flex; justify-content: flex-end; align-items: center; gap: 18px; margin-bottom: 20px;
+}
+.pdf-page-header .button { margin-left: auto; }
+.title-row {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 18px;
+  margin-bottom: 18px;
+}
+.title-row .page-heading {
+  margin: 0;
+}
+.title-row .page-heading h1 {
+  margin-bottom: 0;
+}
+.title-row .button {
+  margin-bottom: 12px;
+}
+.pdf-hero {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 18px 26px 24px;
+  margin-bottom: 18px;
+}
+.pdf-hero h1 {
+  margin: 0;
+  font-size: clamp(38px, 6vw, 86px);
+  line-height: .95;
+}
+.pdf-viewer {
+  background: var(--surface); border: 1px solid var(--line); overflow: hidden;
+}
+.pdf-viewer embed {
+  display: block; width: 100%; min-height: 82vh; border: 0; background: #fff;
+}
+.pdf-page .page-heading h1 {
+  font-size: clamp(28px, 4vw, 52px);
+  margin-bottom: 18px;
+}
+.pdf-page .page-heading .lead {
+  max-width: 760px;
+}
+.pdf-page-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
 
 /* Sections and cards */
 .section { border-top: 1px solid var(--line); padding: 40px 0 0; }
@@ -384,6 +437,14 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-wireframe-single {
   display: block;
   min-height: 300px;
+}
+.sprint4-wireframe-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: #fff;
 }
 .sprint4-wireframe-single .sprint4-wireframe-panel {
   width: 100%; min-height: 280px; background: rgba(255,255,255,0.02);
