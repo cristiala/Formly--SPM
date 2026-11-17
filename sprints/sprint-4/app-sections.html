@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formly Sprint 4 Home, Feedback, Personal Trainer, and Stored Exercises page designs.">
+    <title>App Sections | Sprint 4 | Formly</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <script src="../../assets/theme.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span></a>
+            <nav aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About Us</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprint-1.html">Sprint 1</a>
+                        <a href="../sprint-2.html">Sprint 2</a>
+                        <a href="../sprint-3.html">Sprint 3</a>
+                        <a href="../sprint-4.html" aria-current="page">Sprint 4</a>
+                    </div>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container sprint-page" id="main" tabindex="-1">
+        <section class="page-heading sprint4-heading" aria-labelledby="page-title">
+            <p class="eyebrow">Sprint 4 / Initial app design</p>
+            <h1 id="page-title">App Sections</h1>
+            <p class="lead">Review the team's Home, Feedback, Personal Trainer, and Stored Exercises page designs.</p>
+            <div class="sprint-meta"><a href="../sprint-4.html">← Sprint 4 overview</a><span>Design review</span></div>
+        </section>
+
+        <div class="sprint-sections sprint4-sections">
+            <div class="sprint4-view-toggle" aria-label="Design view filter">
+                <button class="sprint4-view-button" type="button" data-view="wireframe">Wireframe</button>
+                <button class="sprint4-view-button is-active" type="button" data-view="sketch">Sketch</button>
+            </div>
+
+            <article class="card sprint4-wireframe-card sprint4-view-shell" data-view="wireframe" aria-labelledby="wireframe-overview-heading" style="display:none;">
+                <p class="eyebrow">Wireframe</p>
+                <h2 id="wireframe-overview-heading">Wireframe</h2>
+                <div class="sprint4-wireframe-visual sprint4-wireframe-single">
+                    <img src="pdfs/Four-Screen Fitness App Wireframes.png" alt="Wireframe overview of the Formly app showing the four main screens in a single layout." class="sprint4-wireframe-image" />
+                </div>
+            </article>
+
+            <section class="card doc-section" id="app-page-designs" aria-labelledby="app-page-designs-heading">
+                <p class="eyebrow">01 / Home page</p>
+                <h2 id="app-page-designs-heading">Home / Landing design</h2>
+                <p>The hand-drawn Home sketch shows how users find exercises, return to recent activity, and open saved exercise records. The other destinations in its bottom navigation are shown here only as labels; their page layouts are not drafted yet.</p>
+
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="landing-page-heading">
+                    <p class="eyebrow">Page 01 / Entry screen</p>
+                    <h3 id="landing-page-heading">Home / Landing</h3>
+                    <div class="sprint4-landing-body sprint4-view-sketch">
+                        <div class="sprint4-wireframe-placeholder sprint4-home-wireframe">
+                            <img src="pdfs/HomePage_Sketch.png" alt="Hand-drawn Home page sketch showing a welcome and camera controls, exercise search, three recent exercise rows, a stored exercises list, and Home, Stored, PT Chat, and Settings navigation.">
+                        </div>
+                        <div>
+                            <p>The Home page gives users a quick path to their next form check and the exercise records they have already saved.</p>
+                            <ul>
+                                <li><strong>Welcome and camera setup:</strong> greet the signed-in user by name. The upper-right area shows camera setup, an on/off control, a check action, and settings.</li>
+                                <li><strong>Search exercise:</strong> find an exercise to start a form check.</li>
+                                <li><strong>Recent exercises:</strong> show the last three exercises with a brief description or overview for each.</li>
+                                <li><strong>Stored exercises:</strong> list saved exercise records below Recent exercises, with a date and summary for each entry. A stored record can lead back to its feedback.</li>
+                                <li><strong>Bottom navigation:</strong> Home returns to this screen; Stored opens saved exercises; PT Chat connects the user with a trainer for personalized feedback; Settings opens app preferences.</li>
+                            </ul>
+                            <p class="section-note">The sketch sets out the page structure; camera actions, search behavior, and the other destinations still need interaction designs.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a class="button document-download" href="pdfs/HomePage_Sketch.png" download="HomePage_Sketch.png" aria-label="Download Home page sketch">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                            <span>Download image</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card doc-section" id="app-feedback-design" aria-labelledby="app-feedback-design-heading">
+                <p class="eyebrow">02 / Feedback page</p>
+                <h2 id="app-feedback-design-heading">Feedback design</h2>
+                <p>This section focuses on the corrective guidance a user sees after a movement check is captured, from the live form issue to the quick evaluation state.</p>
+
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="feedback-page-heading">
+                    <p class="eyebrow">Page 02 / Form check</p>
+                    <h3 id="feedback-page-heading">Feedback Page Design</h3>
+                    <div class="sprint4-landing-body sprint4-view-sketch">
+                        <div class="sprint4-wireframe-placeholder">
+                            <img src="pdfs/FeedbackPage_Sketch.jpg" alt="Feedback page sketch" />
+                        </div>
+                        <div>
+                            <p>The feedback view explains what the user should adjust and gives them a quick way to evaluate whether the guidance was helpful.</p>
+                            <ul>
+                                <li><strong>Live form overlay:</strong> movement guidance stays visible while the user performs the action.</li>
+                                <li><strong>Corrective guidance:</strong> concise instructions point to the next step the user should take.</li>
+                                <li><strong>Confidence / completion state:</strong> feedback indicates when form has been corrected or still needs adjustment.</li>
+                                <li><strong>Quick evaluation:</strong> users can indicate whether the feedback felt useful and add optional comments.</li>
+                            </ul>
+                            <p class="section-note">This screen should stay concise and actionable so the user can adjust immediately without leaving the movement flow.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a class="button document-download" href="pdfs/FeedbackPage_Sketch.jpg" download="FeedbackPage_Sketch.jpg" aria-label="Download feedback image">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                            <span>Download image</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card doc-section" id="app-personal-trainer-design" aria-labelledby="app-personal-trainer-design-heading">
+                <p class="eyebrow">03 / Personal Trainer page</p>
+                <h2 id="app-personal-trainer-design-heading">Personal Trainer design</h2>
+                <p>This section focuses on a one-on-one session between the user and a personal trainer where the trainer evaluates the form of the user and gives more tailored feedback, answers any questions the user may have, and overall helps the user understand where things may have gone wrong or right.</p>
+
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="personal-trainer-page-heading">
+                    <p class="eyebrow">Page 03 / Personal Trainer</p>
+                    <h3 id="personal-trainer-page-heading">Personal Trainer Page Design</h3>
+                    <div class="sprint4-landing-body sprint4-view-sketch">
+                        <div class="sprint4-wireframe-placeholder">
+                            <img src="pdfs/Personal_trainer_sketch.png" alt="personal trainer page sketch" />
+                        </div>
+                        <div>
+                            <p>The personal trainer page gives the user a easy layout similar to most video call apps. The user has the option to turn on their camera and microphone. Although not shown on the image, the user can also type messages and they will be displayed on screen. (The speaking bubble is there to represent the trainer speaking live.)</p>
+                            <ul>
+                                <li><strong>Live trainer video feed:</strong> the trainer appears as the main view, similar to a standard video call, so the session feels personal and one-on-one.</li>
+                                <li><strong>Pose analysis playback:</strong> the user's recorded movement is the same as in the feedback page. Video must be recorded and saved</li>
+                                <li><strong>Self-view window:</strong> allows the user to see their own camera feed. The user can either just stay in call talking to the trainer, or actively adjust their form as the trainer provides guidance.</li>
+                                <li><strong>Session recording:</strong> a REC indicator shows the session is being recorded so the user can review the trainer's feedback later.</li>
+                            </ul>
+                            <p class="section-note">This screen should stay concise and actionable so the user can adjust immediately without leaving the movement flow.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a class="button document-download" href="pdfs/Personal_trainer_sketch.png" download="Personal_trainer_sketch.png" aria-label="Download personal trainer image">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                            <span>Download image</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card doc-section" id="app-stored-exercises-design" aria-labelledby="app-stored-exercises-design-heading">
+                <p class="eyebrow">04 / Stored Exercises page</p>
+                <h2 id="app-stored-exercises-design-heading">Stored Exercises Page Design</h2>
+                <p>This section focuses on how users can access their previously saved exercises, recordings, and form feedback. The page allows users to review past workouts and revisit their feedback without having to repeat an exercise check.</p>
+
+                <article class="sprint4-app-card sprint4-landing sprint4-view-shell" data-view="sketch" aria-labelledby="stored-exercises-page-heading">
+                    <p class="eyebrow">Page 04 / Saved exercise history</p>
+                    <h3 id="stored-exercises-page-heading">Page Description</h3>
+                    <div class="sprint4-landing-body sprint4-view-sketch">
+                        <div class="sprint4-wireframe-placeholder">
+                            <img src="pdfs/StoredExercises_Sketch.png" alt="Hand-drawn Stored Exercises page with a cloud icon, search saved exercises field, squat, bicep curl and lunge history entries with dates and saved feedback, sort by date, and Home, Stored, PT Chat and Settings navigation." loading="lazy">
+                        </div>
+                        <div>
+                            <p>The Stored Exercises page provides users with an organized history of their completed exercises. Each saved entry displays the exercise name, date, and feedback status, allowing users to quickly locate and review previous sessions.</p>
+                            <ul>
+                                <li><strong>Cloud storage:</strong> A cloud icon represents the storage of exercise records and feedback so users can access their saved information later.</li>
+                                <li><strong>Search saved exercises:</strong> Allows users to search for specific exercises within their saved workout history.</li>
+                                <li><strong>Exercise history:</strong> Displays previously completed exercises, including squats, bicep curls, and lunges.</li>
+                                <li><strong>Exercise details:</strong> Each entry shows the exercise name, completion date, and whether feedback has been saved.</li>
+                                <li><strong>Sort by date:</strong> Allows users to organize their exercise history by date to find recent or older sessions.</li>
+                                <li><strong>Review saved feedback:</strong> Selecting an exercise opens its saved record, where users can revisit previous form feedback.</li>
+                                <li><strong>Bottom navigation:</strong> Provides access to Home, Stored Exercises, PT Chat, and Settings, keeping navigation consistent throughout Formly.</li>
+                            </ul>
+                            <p class="section-note">The goal of this page is to make previous exercise records easy to find and review, allowing users to revisit their form guidance and track their progress over time.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a class="button document-download" href="pdfs/StoredExercises_Sketch.png" download="StoredExercises_Sketch.png" aria-label="Download Stored Exercises page sketch">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                            <span>Download image</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+        </div>
+
+        <script>
+            const wireframeCard = document.querySelector('.sprint4-wireframe-card');
+            const appCards = document.querySelectorAll('.sprint4-app-card');
+            const sections = document.querySelectorAll('.doc-section');
+
+            document.querySelectorAll('.sprint4-view-toggle').forEach((group) => {
+                const buttons = group.querySelectorAll('.sprint4-view-button');
+                if (!buttons.length) return;
+
+                buttons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        const view = button.dataset.view;
+
+                        buttons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
+
+                        if (wireframeCard) {
+                            wireframeCard.style.display = view === 'wireframe' ? 'block' : 'none';
+                        }
+
+                        appCards.forEach((card) => {
+                            card.style.display = view === 'wireframe' ? 'none' : 'block';
+                        });
+
+                        sections.forEach((section) => {
+                            section.style.display = view === 'wireframe' ? 'none' : 'block';
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <nav class="sprint-navigation" aria-label="Sprint navigation">
+            <a href="../sprint-4.html">← Sprint 4 overview</a>
+            <a href="service-levels.html">Service Levels →</a>
+        </nav>
+    </main>
+    <footer class="container site-footer"><span>Formly / Living Project Portal</span><span>Software Project Management</span></footer>
+</body>
+</html>

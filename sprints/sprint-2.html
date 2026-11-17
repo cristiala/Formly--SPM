@@ -6,6 +6,7 @@
     <title>Sprint 2 | Formly</title>
     <meta name="description" content="Formly's semester project portal: meet the team and follow the project sprint by sprint.">
     <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../assets/theme.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,8 +18,16 @@
             <nav aria-label="Main navigation">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About Us</a>
-                <a href="../sprints/sprint-1.html">Sprint 1</a>
-                <a href="../sprints/sprint-2.html" aria-current="page">Sprint 2</a>
+                <details class="nav-dropdown" open>
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprints/sprint-1.html">Sprint 1</a>
+                        <a href="../sprints/sprint-2.html" aria-current="page">Sprint 2</a>
+                        <a href="../sprints/sprint-3.html">Sprint 3</a>
+                        <a href="../sprints/sprint-4.html">Sprint 4</a>
+                        <a href="sprint-5/sprint-5.html">Sprint 5</a>
+                    </div>
+                </details>
             </nav>
         </div>
     </header>
@@ -26,37 +35,181 @@
         <section class="page-heading">
             <p class="eyebrow">The project journal</p>
             <h1>Sprint 2</h1>
-            <p class="lead">[Add a one-sentence summary of this sprint.]</p>
+            <p class="lead">Keep the project on track by defining the work, sizing the team, pricing the effort, and protecting against risks.</p>
             <div class="sprint-meta">
-                <span class="badge">Template · Not yet documented</span>
-                <span>[Start date] - [End date]</span>
+                <span>September 22 - October 7</span>
             </div>
         </section>
-        <p class="notice">This page is a scaffold. Replace the placeholders and adapt the sections to the course's sprint-specific requirements.</p>
         <div class="sprint-sections">
-            <section class="card" aria-labelledby="goal">
-                <h2 id="goal">Sprint goal</h2>
-                <p>[What did the team set out to accomplish, and why did it matter?]</p>
+            <section class="card" aria-labelledby="business-case">
+                <h2 id="business-case">Business Case</h2>
+                <p>Value analysis and go/no-go recommendation.</p>
+                <p>Formly addresses the need for accessible and timely exercise-form guidance for people with limited gym experience, especially users who may not have access to or feel comfortable working with a personal trainer. Our Sprint 1 research found that users value immediate feedback and that passive workout videos and tutorials do not provide the personalized guidance users need while actively exercising.</p>
+                <p>Formly's proposed solution is a camera-based application that uses computer vision to analyze a user's exercise movements and provide immediate, exercise-specific feedback. The initial product will focus on camera input, movement analysis, and real-time corrective cues while keeping coaching videos and tutorials outside the initial scope and deferring features such as a chatbot and persistent video storage.</p>
+                <p>Based on the user need identified in Sprint 1 and the project effort, staffing, and cost estimates developed during Sprint 2, our recommendation is to proceed with the project while continuing to evaluate technical feasibility, feedback accuracy, project cost, and user experience.</p>
             </section>
-            <section class="card" aria-labelledby="work">
-                <h2 id="work">Work and ownership</h2>
+            <section class="card" aria-labelledby="estimation-appendix">
+                <h2 id="estimation-appendix">Estimation Appendix</h2>
+                <p>The estimation methods used, the ranges produced, and the reasoning behind them.</p>
+                <h4>Estimation Appendix Summary at a glance</h4>
+                <table class="estimation-table">
+                    <tr class="row-highlight">
+                        <th>Field</th>
+                        <th>Our Estimate</th>
+                    </tr>
+                    <tr>
+                        <td><b>Slice estimated</b></td>
+                        <td>Deliver live exercise feedback with measurable low latency</td>
+                    </tr>
+                    <tr>
+                        <td><b>Range in hours (low to high)</b></td>
+                        <td>360-3,672 hours</td>
+                    </tr>
+                    <tr>
+                        <td><b>Expected hours: <br>((O + 4M + P) / 6), and why we chose M</b></td>
+                        <td>(360 + 4(2,760) + 3,672) ÷ 6 = 2,512 hours. We chose 2,760 hours as our most likely value because it represents the middle Story Point estimate using our assumed velocity of 20 points per sprint.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Cost range and loaded rate used</b></td>
+                        <td>According to the Bureau of Labor statistics, the median annual wage 
+                            for a software developer was $135,980 in May 2025. Assuming a 20% 
+                            overhead then the loaded rate would be $65.37 an hour &times; 0.20 = 13.07, 
+                            so $65.37 + $13.07 = $78.44 an hour. The cost range would then be: <br>
+                               &#x2022; Low: 360 hrs &times; 78.44 = $28,238.40  <br>
+                               &#x2022; Expected: 2,512 hrs &times; 78.44 = $197,041.28  <br>
+                               &#x2022; High: 3,672 hrs &times; 78.44 = $288,007.68 <br>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><b>Calendar estimate in weeks, and hours per week assumed</b></td>
+                        <td>Productive hours per person per week: 40 <br> 
+                            Hours per week assumed: 1200 (30 &times; 40) <br>
+                            2,512 ÷ (30 &times; 40) = 2.09 weeks, about 2 weeks</td>
+                    </tr>
+                    <tr>
+                        <td><b>Methods used</b></td>
+                        <td>Function points and story points</td>
+                    </tr>
+                    <tr>
+                        <td><b>Key Assumptions</b></td>
+                        <td>6-12 hours per FP, 15/20/30 story points per sprint, 80 hours per person per sprint, 30 team members, 20% overhead, M = 2,760, pay rate of $65.37</td>
+                    </tr>
+                    <tr>
+                        <td><b>Team size assumed</b></td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td><b>What would change this estimate</b></td>
+                        <td>The actual hours and velocity needed to complete the slice.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Date of this estimate</b></td>
+                        <td>10/5/2026</td>
+                    </tr>
+                </table>
+                <br>
+                <details>
+                    <summary><strong>Read 10 step budget</strong></summary> 
+                    <div class="sprint-grid" style="margin-top: 16px;">
+                        <a class="card sprint-card" href="sprint-2/define-the-work.html">
+                            <h3>Define the work</h3>
+                            <p>Assumptions, work packages, and effort estimates.</p>
+                            <span class="card-link">Read document <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="card sprint-card" href="sprint-2/size-the-people.html">
+                            <h3>Size the people</h3>
+                            <p>Person-month estimates and staffing plan.</p>
+                            <span class="card-link">Read document <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="card sprint-card" href="sprint-2/price-it.html">
+                            <h3>Price it</h3>
+                            <p>Labor, non-labor, and operating cost assumptions.</p>
+                            <span class="card-link">Read document <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="card sprint-card" href="sprint-2/protect-and-track.html">
+                            <h3>Protect and track</h3>
+                            <p>Reserves and time-phased project checks.</p>
+                            <span class="card-link">Read document <span aria-hidden="true">→</span></span>
+                        </a>
+                    </div>
+                </details>
+            </section>
+            <section class="card" aria-labelledby="roi-analysis">
+                <h2 id="roi-analysis">ROI Analysis</h2>
+                <p>Formly would provide value by giving users real-time feedback on their exercise form without needing to have a personal trainer with them. This can make proper workout guidance more accessible while also helping users recognize mistakes in their form and potentially reduce the risk of injury.</p>
+                <p>The main investment would be the cost of developing and maintaining the application, especially the computer vision system, developers, UX, QA, and DevOps. Based on our Sprint 2 estimates, the initial development cost is a significant investment, but Formly could provide long-term value if enough users find the feedback useful and continue using the app.</p>
+                <p>Since the project is still in the planning stage, we do not have enough information yet to calculate an exact financial ROI. As the project continues, we can compare development and maintenance costs with factors such as number of users, user retention, subscription revenue, and how often users use the form-feedback feature.</p>
+            </section>
+                        <section class="card" aria-labelledby="change-log">
+                <h2 id="change-log">Change log</h2>
                 <ul>
-                    <li>[Work item — owner — outcome or status]</li>
-                    <li>[Work item — owner — outcome or status]</li>
+                   <li><strong>What was revised from the prior sprint's version:</strong> Updated the Estimation Appendix numbers and finalized the business case narrative based on team review. Added the 10 step budget method and the ROI analysis.</li>
+                   <li><strong>Why it was revised:</strong> Refined calculations to match updated labor rates, team capacity assumptions, and project portal milestones for Sprint 2.</li>
+                   <li><strong>What downstream pages or documents were affected:</strong> The Sprint 2 overview portal page, the 4 subpages for the different phases, and living budget tracking spreadsheets.</li>
                 </ul>
             </section>
-            <section class="card" aria-labelledby="decisions">
-                <h2 id="decisions">Decisions and challenges</h2>
-                <p>[Describe key decisions, the alternatives considered, and any blockers or changes to the plan.]</p>
+            <section class="card" aria-labelledby="contributions">
+                <h2 id="contributions">Contribution statement</h2>
+                <p>Record each member's actual contribution to this sprint.</p>
+                <div class="team-grid">
+                    <article class="card">
+                        <h3>Abigail Galarza</h3>
+                        <dl>
+                            <dt>Work owned</dt>
+                            <dd>Completed estimation Section 3C (story points to cost) and Step 5 (comparing estimates). Created the budget's person-month calculations and six-month staffing plan, and added the tables to the <a href="sprint-2/size-the-people.html">Size the People page</a>.</dd>
+                            <dt>Work reviewed</dt>
+                            <dd>Reviewed the differences between the two estimation methods and checked the budget calculations and staffing totals.</dd>
+                        </dl>
+                    </article>
+                    <article class="card">
+                        <h3>Viviana Cadena</h3>
+                        <dl>
+                            <dt>Work owned</dt>
+                            <dd>Completed the Estimation Appendix Summary at a glance, Completed the Price It section, created the graph for the 3 year cost projection of the Price It section.</dd>
+                            <dt>Work reviewed</dt>
+                            <dd>Reviewed the estimation section 3C, step 5 (comparing estimates), and the size-the-people section as they directly affected all my sections.</dd>
+                        </dl>
+                    </article>
+                    <article class="card">
+                        <h3>Cristina Alarcon</h3>
+                        <dl>
+                            <dt>Work owned</dt>
+                            <dd>Developed the Define the Work step, created graphs for work packages, and worked on the change log. Gemini was used to help with syntaxing.</dd>
+                            <dt>Work reviewed</dt>
+                            <dd>Reviewed Estimation appendix.</dd>
+                        </dl>
+                    </article>
+                    <article class="card">
+                        <h3>Edward</h3>
+                        <dl>
+                            <dt>Work owned</dt>
+                            <dd>Developed the <a href="sprint-2/protect-and-track.html">Protect and track page</a>: risk EMVs, contingency and management reserves, the six-month spending plan, budget charts, and the full build request.</dd>
+                            <dt>Work reviewed</dt>
+                            <dd>Reviewed and revised the budget inputs, risk assumptions, and reserve calculations, using the team's final labor and non-labor figures.</dd>
+                        </dl>
+                    </article>
+                </div>
+                <p class="section-note"><strong>Contribution statement PDF:</strong> Not available yet. A download will be added when the document is complete.</p>
             </section>
-            <section class="card" aria-labelledby="evidence">
-                <h2 id="evidence">Deliverables and evidence</h2>
-                <p>[Add descriptive links to demos, issues, screenshots, or sprint subpages. Explain what each demonstrates.]</p>
+
+            <section id="ai-use-disclosure" class="card doc-section" aria-labelledby="ai-use-disclosure-heading">
+                <h2 id="ai-use-disclosure-heading">AI use disclosure</h2>
+                <dl>
+                    <dt>Tools used</dt>
+                    <dd>Codex and ChatGPT for Edward's budget work; Gemini for syntax assistance reported by Cristina. Claude for finding links to real world sources for labor, non-labor, operational cost by Viviana.</dd>
+                    <dt>PM AI Protocol Usage Phases</dt>
+                    <dd>Assistance with page development and summary refinement, plus drafting budget tables, checking calculations, and creating charts and the PDF for Protect and track.</dd>
+                    <dt>Team review and revisions</dt>
+                    <dd>The team reviewed the AI-assisted output, checked the budget calculations and assumptions, and refined the wording and presentation to align with the project.</dd>
+                </dl>
             </section>
         </div>
         <nav class="sprint-navigation" aria-label="Sprint navigation">
-            <a href="../index.html">← All sprints</a>
-            <a href="sprint-1.html">← Sprint 1</a>
+            <div class="sprint-nav-group">
+                <a href="../index.html">← All sprints</a>
+                <a href="sprint-1.html">← Sprint 1</a>
+            </div>
+            <a href="sprint-3.html">Sprint 3 →</a>
         </nav>
     </main>
     <footer class="container site-footer">

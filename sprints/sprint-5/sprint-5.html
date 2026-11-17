@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formly Sprint 5: design iteration, Figma mockups, and team review for the app experience.">
+    <title>Sprint 5 | Formly</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <script src="../../assets/theme.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span></a>
+            <nav aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About Us</a>
+                <details class="nav-dropdown" open>
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprint-1.html">Sprint 1</a>
+                        <a href="../sprint-2.html">Sprint 2</a>
+                        <a href="../sprint-3.html">Sprint 3</a>
+                        <a href="../sprint-4.html">Sprint 4</a>
+                        <a href="sprint-5.html" aria-current="page">Sprint 5</a>
+                    </div>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="container sprint-page" tabindex="-1">
+        <section class="page-heading" aria-labelledby="page-title">
+            <p class="eyebrow">The project journal</p>
+            <h1 id="page-title">Sprint 5</h1>
+            <p class="lead">Refining the experience in Figma and turning the earlier hand-drawn concepts into a more polished, testable app flow.</p>
+            <div class="sprint-meta"><span>Design iteration and prototype refinement</span></div>
+        </section>
+
+        <div class="sprint-sections">
+            <section class="card doc-section" id="figma-mockups" aria-labelledby="figma-mockups-heading">
+                <h2 id="figma-mockups-heading">Figma Mockups</h2>
+                <p>Review the complete Formly app flow from the Figma file: Welcome, Home, Form Check, Stored Exercises, PT Chat, Settings, and Profile.</p>
+                <figure class="sprint-video">
+                    <video controls playsinline preload="metadata" poster="pdfs/welcome-home-poster.jpg"
+                    style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;">
+                    <source src="pdfs/welcome-home.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="pdfs/welcome-home.mp4">Download the video</a>.
+                    </video>
+                <figcaption style="text-align:center;">Formly welcome screen walkthrough. This is the screen that users will get when they load into the app. The user can either log in with a existing account or sign up with one.</figcaption>
+                </figure>
+
+                <article class="sprint5-mockup" id="home-mockup" aria-labelledby="home-mockup-heading">
+                    <p class="eyebrow">01 / Home</p>
+                    <h3 id="home-mockup-heading">Home screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/home-mockup.png" alt="Home mockup with camera setup, exercise search, three recent exercises, stored exercise summaries, and Home, Stored, PT Chat, and Settings navigation." loading="lazy">
+                        <div>
+                            <p>The Home screen helps users find an exercise, check camera setup, and return to recent or stored exercises. It shows the three most recent exercises and short summaries of saved feedback.</p>
+                            <p class="section-note">The bottom navigation keeps Stored, PT Chat, and Settings available from the Home screen.</p>
+                            <a class="button" href="pdfs/home-mockup.png" download="home-mockup.png">Download Home mockup</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sprint5-mockup" id="form-check-mockup" aria-labelledby="form-check-mockup-heading">
+                    <p class="eyebrow">02 / Form Check</p>
+                    <h3 id="form-check-mockup-heading">Form Check and feedback screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/form-check-mockup.png" alt="Form Check mockup showing a recorded exercise, live form guidance, helpfulness controls, comments, and an option to save the feedback and video." loading="lazy">
+                        <div>
+                            <p>The Form Check screen pairs exercise playback with clear corrective feedback. Users can review cues, rate whether the feedback helped, add a comment, and save the feedback with the video.</p>
+                            <p class="section-note">The side-by-side layout keeps the movement and its coaching cues visible together.</p>
+                            <a class="button" href="pdfs/form-check-mockup.png" download="form-check-mockup.png">Download Form Check mockup</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sprint5-mockup" id="stored-exercises-mockup" aria-labelledby="stored-exercises-mockup-heading">
+                    <p class="eyebrow">03 / Stored</p>
+                    <h3 id="stored-exercises-mockup-heading">Stored Exercises screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/stored-exercises-mockup.png" alt="Stored Exercises mockup with search, date sorting, and saved Squat, Bicep Curl, and Lunge sessions with feedback." loading="lazy">
+                        <div>
+                            <p>The Stored Exercises screen gives users a searchable, date-sorted history of saved sessions. Each row shows the exercise, date, saved-feedback status, and a path to the full result.</p>
+                            <p class="section-note">Users can also upload exercises from this screen.</p>
+                            <a class="button" href="pdfs/stored-exercises-mockup.png" download="stored-exercises-mockup.png">Download Stored Exercises mockup</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sprint5-mockup" id="pt-chat-mockup" aria-labelledby="pt-chat-mockup-heading">
+                    <p class="eyebrow">04 / PT Chat</p>
+                    <h3 id="pt-chat-mockup-heading">PT Chat screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/pt-chat-mockup.png" alt="PT Chat mockup showing a live trainer video session, the user's tracked pose, call controls, pose-analysis playback, recording, and session notes." loading="lazy">
+                        <div>
+                            <p>The PT Chat screen supports a live coaching session with the trainer, a tracked preview of the user's movement, and camera, microphone, and call controls.</p>
+                            <p class="section-note">Pose-analysis playback, session recording, and notes remain available below the call.</p>
+                            <a class="button" href="pdfs/pt-chat-mockup.png" download="pt-chat-mockup.png">Download PT Chat mockup</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sprint5-mockup" id="settings-mockup" aria-labelledby="settings-mockup-heading">
+                    <p class="eyebrow">05 / Settings</p>
+                    <h3 id="settings-mockup-heading">Settings screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/settings-mockup.png" alt="Settings mockup with a profile card, AI feedback style, password and sign-in, subscription, privacy and data controls, and the same four bottom navigation destinations." loading="lazy">
+                        <div>
+                            <p>The Settings screen groups profile access, AI feedback preferences, and account and security controls. The profile card leads to profile editing; the other rows lead to their matching settings.</p>
+                            <p class="section-note">The same four bottom destinations appear here, with Settings highlighted to show the current page.</p>
+                            <a class="button" href="pdfs/settings-mockup.png" download="settings-mockup.png">Download Settings mockup</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sprint5-mockup" id="profile-mockup" aria-labelledby="profile-mockup-heading">
+                    <p class="eyebrow">06 / Profile</p>
+                    <h3 id="profile-mockup-heading">Profile screen</h3>
+                    <div class="sprint5-mockup-layout">
+                        <img src="pdfs/profile-mockup.png" alt="Profile mockup with personal information, fitness goals, nutrition and macro preferences, experience level, and accessibility and limitation settings." loading="lazy">
+                        <div>
+                            <p>The Profile screen lets users maintain the information Formly needs to personalize coaching, including contact details, fitness goals, nutrition preferences, experience, and accessibility needs.</p>
+                            <p class="section-note">A clear return path takes the user back to Settings without losing the main bottom navigation.</p>
+                            <a class="button" href="pdfs/profile-mockup.png" download="profile-mockup.png">Download Profile mockup</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card doc-section sprint5-contribution" id="contribution-statement" aria-labelledby="contribution-statement-heading">
+                <h2 id="contribution-statement-heading">Contribution statement</h2>
+                <p>Record each member's actual Sprint 5 contributions, with work owned and work reviewed separately.</p>
+                <div class="team-grid">
+                    <article class="card">
+                        <h3>Abigail Galarza</h3>
+                        <dl><dt>Work owned</dt><dd>Created the Settings page and added final touches to the Figma pages.</dd><dt>Work reviewed</dt><dd>Helped review several of the final Figma screens for consistency and completeness.</dd></dl>
+                    </article>
+                    <article class="card">
+                        <h3>Cristina Alarcon</h3>
+                        <dl><dt>Work owned</dt><dd>Added crisis memo and sprint 5 template. Worked on feedback screen and design of Figma app screens.</dd><dt>Work reviewed</dt><dd>Reviewed layout of sprint 5 sections to make sure all screen descriptions are accurate.</dd></dl>
+                    </article>
+                    <article class="card">
+                        <h3>Viviana Cadena</h3>
+                        <dl><dt>Work owned</dt><dd>Worked on the mockups for the app. Created the welcome home/landing page.</dd><dt>Work reviewed</dt><dd></dd></dl>
+                    </article>
+                    <article class="card">
+                        <h3>Edward</h3>
+                        <dl><dt>Work owned</dt><dd>Added the complete set of Figma mockups to the Sprint 5 page.</dd><dt>Work reviewed</dt><dd>Reviewed the screen flow and navigation for consistency.</dd></dl>
+                    </article>
+                </div>
+            </section>
+
+            <section class="card doc-section" id="ai-use-disclosure" aria-labelledby="ai-use-disclosure-heading">
+                <h2 id="ai-use-disclosure-heading">AI use disclosure</h2>
+                <dl>
+                    <dt>Tools used</dt>
+                    <dd>Codex assisted with placing all seven Sprint 5 Figma screens and drafting their descriptions.</dd>
+                    <dt>PM AI Protocol Usage Phases</dt>
+                    <dd>Drafting and presentation of Sprint 5 design updates.</dd>
+                    <dt>Team review and revisions</dt>
+                    <dd>The complete Welcome, Home, Form Check, Stored Exercises, PT Chat, Settings, and Profile flow was reviewed for consistent navigation and presentation.</dd>
+                </dl>
+            </section>
+        </div>
+
+        <nav class="sprint-navigation" aria-label="Sprint navigation">
+            <a href="../../index.html">← All sprints</a>
+            <a href="../sprint-4.html">← Sprint 4</a>
+        </nav>
+    </main>
+    <footer class="container site-footer"><span>Formly / Living Project Portal</span><span>Software Project Management</span></footer>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>Home | Formly</title>
     <meta name="description" content="Formly's semester project portal: meet the team and follow the project sprint by sprint.">
     <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/theme.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,8 +18,16 @@
             <nav aria-label="Main navigation">
                 <a href="index.html" aria-current="page">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="sprints/sprint-1.html">Sprint 1</a>
-                <a href="sprints/sprint-2.html">Sprint 2</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="sprints/sprint-1.html">Sprint 1</a>
+                        <a href="sprints/sprint-2.html">Sprint 2</a>
+                        <a href="sprints/sprint-3.html">Sprint 3</a>
+                        <a href="sprints/sprint-4.html">Sprint 4</a>
+                        <a href="sprints/sprint-5/sprint-5.html">Sprint 5</a>
+                    </div>
+                </details>
             </nav>
         </div>
     </header>
@@ -26,7 +35,7 @@
         <section class="hero">
             <p class="eyebrow">Living Project Portal</p>
             <h1>Meet Formly.</h1>
-            <p class="lead placeholder">[Describe the business problem your project solves in one sentence.]</p>
+            <p class="lead placeholder">Helping people grow their confidence in the gym and reduce their risk of injury.</p>
             <p class="hero-description">Our team, our decisions, and our progress—documented sprint by sprint throughout the semester.</p>
             <a class="button" href="about.html">Meet the team <span aria-hidden="true">↗</span></a>
         </section>
@@ -38,23 +47,57 @@
                 </div>
                 <span class="muted">A growing record of our work</span>
             </div>
+            <div class="memo-banner">
+                <div>
+                    <p class="eyebrow">Supplemental document</p>
+                    <h3>View our Crisis Response Memo</h3>
+                </div>
+                <a class="button" href="sprints/sprint-5/crisis-response-memo.html">View memo <span aria-hidden="true">↗</span></a>
+            </div>
             <div class="sprint-grid">
                 <a class="card sprint-card" href="sprints/sprint-1.html">
                     <div class="card-top">
                         <span class="index">01</span>
-                        <span class="badge">Template</span>
+                        <span class="badge">Complete</span>
                     </div>
                     <h3>Sprint 1</h3>
-                    <p>[Add a short summary of the sprint's focus.]</p>
+                    <p>Gathering market research and defining the project scope.</p>
                     <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
                 </a>
                 <a class="card sprint-card" href="sprints/sprint-2.html">
                     <div class="card-top">
                         <span class="index">02</span>
-                        <span class="badge">Template</span>
+                        <span class="badge">In progress</span>
                     </div>
                     <h3>Sprint 2</h3>
-                    <p>[Add a short summary of the sprint's focus.]</p>
+                    <p>Defining the project plan and estimating resources.</p>
+                    <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="card sprint-card" href="sprints/sprint-3.html">
+                    <div class="card-top">
+                        <span class="index">03</span>
+                        <span class="badge">Planned</span>
+                    </div>
+                    <h3>Sprint 3</h3>
+                    <p>Documenting the next phase of the project and the work that follows.</p>
+                    <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="card sprint-card" href="sprints/sprint-4.html">
+                    <div class="card-top">
+                        <span class="index">04</span>
+                        <span class="badge">Team review</span>
+                    </div>
+                    <h3>Sprint 4</h3>
+                    <p>Draft service levels and an initial Home page design for the app.</p>
+                    <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="card sprint-card" href="sprints/sprint-5/sprint-5.html">
+                    <div class="card-top">
+                        <span class="index">05</span>
+                        <span class="badge">Figma</span>
+                    </div>
+                    <h3>Sprint 5</h3>
+                    <p>Updated mockups and design refinements for the Formly experience.</p>
                     <span class="card-link">View sprint <span aria-hidden="true">→</span></span>
                 </a>
             </div>

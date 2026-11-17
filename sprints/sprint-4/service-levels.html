@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formly Sprint 4 draft: initial model objectives, DORA metrics, incident response, and review template.">
+    <title>Service Levels | Sprint 4 | Formly</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <script src="../../assets/theme.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">F</span>Formly<span class="brand-note">Project portal</span></a>
+            <nav aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About Us</a>
+                <details class="nav-dropdown">
+                    <summary>Sprints</summary>
+                    <div class="nav-dropdown-menu">
+                        <a href="../sprint-1.html">Sprint 1</a>
+                        <a href="../sprint-2.html">Sprint 2</a>
+                        <a href="../sprint-3.html">Sprint 3</a>
+                        <a href="../sprint-4.html" aria-current="page">Sprint 4</a>
+                    </div>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container sprint-page" id="main" tabindex="-1">
+        <section class="page-heading sprint4-heading" aria-labelledby="page-title">
+            <p class="eyebrow">Sprint 4 / Service levels</p>
+            <h1 id="page-title">Service Levels</h1>
+            <p class="lead">Set honest targets for Formly's first form-feedback model, then define how the team will measure delivery and respond when something goes wrong.</p>
+            <div class="sprint-meta"><a href="../sprint-4.html">← Sprint 4 overview</a><span>Targets proposed, not measured</span></div>
+        </section>
+
+        <div class="sprint-sections sprint4-sections">
+            <section class="card doc-section" id="model-objectives" aria-labelledby="model-objectives-heading">
+                <p class="eyebrow">01 / Service level objectives</p>
+                <h2 id="model-objectives-heading">Two initial model objectives</h2>
+                <p>Each objective uses a rolling 28-day window once testing begins. The worked budgets below use 200 eligible cases <em>only to illustrate the count</em>; the actual allowance changes with the number evaluated. Allowed misses = floor(eligible cases × (100 − target percentage) ÷ 100).</p>
+
+                <div class="sprint4-objectives">
+                    <article class="sprint4-objective" aria-labelledby="useful-guidance-heading">
+                        <div class="sprint4-objective-top"><span class="sprint4-number">01</span><span class="sprint4-target">85% target</span></div>
+                        <h3 id="useful-guidance-heading">Useful guidance</h3>
+                        <p class="sprint4-definition">At least 85% of reviewed completed form checks should give a cue a reviewer can understand and act on, with no clear safety concern under the team's written rubric.</p>
+                        <dl class="sprint4-facts">
+                            <div><dt>Measure</dt><dd>Checks passing the rubric ÷ completed checks reviewed</dd></div>
+                            <div><dt>Source</dt><dd>Sampled check outputs and reviewer decisions</dd></div>
+                            <div><dt>Owner</dt><dd>Model quality owner — name to assign</dd></div>
+                            <div><dt>Window</dt><dd>Rolling 28 days after testing starts</dd></div>
+                        </dl>
+                        <div class="sprint4-budget"><span>Error budget example</span><strong>30 misses</strong><small>Of 200 reviewed checks; 170 must pass.</small></div>
+                        <h4>Budget policy</h4>
+                        <p>At 15 misses in the example window, the model quality owner reviews failed cues and assigns a fix within one working day, telling the team lead and test owner the same day. At 30 misses, that owner pauses model changes that could worsen guidance, notifies those people immediately, and agrees on a recovery plan with them within one working day.</p>
+                    </article>
+
+                    <article class="sprint4-objective" aria-labelledby="issue-detection-heading">
+                        <div class="sprint4-objective-top"><span class="sprint4-number">02</span><span class="sprint4-target">80% target</span></div>
+                        <h3 id="issue-detection-heading">Issue detection</h3>
+                        <p class="sprint4-definition">At least 80% of labeled cases that contain a target form issue should have that issue flagged by the model. This measures recall on known issues.</p>
+                        <dl class="sprint4-facts">
+                            <div><dt>Measure</dt><dd>Unique cases with the target issue correctly flagged ÷ unique labeled cases with that issue</dd></div>
+                            <div><dt>Source</dt><dd>Labeled checks from the window, their outputs, and served model versions</dd></div>
+                            <div><dt>Owner</dt><dd>Evaluation owner — name to assign</dd></div>
+                            <div><dt>Window</dt><dd>Rolling 28 days after testing starts</dd></div>
+                        </dl>
+                        <div class="sprint4-budget"><span>Error budget example</span><strong>40 misses</strong><small>Of 200 labeled issue cases; 160 must be flagged.</small></div>
+                        <h4>Budget policy</h4>
+                        <p>At 20 missed issues in the example window, the evaluation owner checks missed cases by exercise, camera angle, and lighting within one working day, telling the model owner and team lead the same day. At 40 misses, the evaluation owner pauses expansion to new exercises, notifies those people immediately, and agrees on a retraining or scope plan with them within one working day.</p>
+                    </article>
+                </div>
+                <p class="section-note">The 50% and 100% triggers above should be recalculated from the actual budget when the evaluated case count differs from 200. A reviewer must approve the case labels and rubric before either percentage is published.</p>
+                <p class="section-note">Method reference: <a href="https://sre.google/workbook/error-budget-policy/">Google SRE's error-budget policy</a>.</p>
+            </section>
+
+            <section class="card doc-section" id="dora-metrics" aria-labelledby="dora-metrics-heading">
+                <p class="eyebrow">02 / Delivery performance</p>
+                <h2 id="dora-metrics-heading">DORA metrics</h2>
+                <p>Track releases of the <strong>Formly app to pilot or production users</strong>, not edits to this project portal. These four requested DORA measures have proposed starting targets for a small student team. They are planning goals, not measured results or industry benchmarks.</p>
+                <div class="table-scroll" role="region" aria-label="DORA metrics table" tabindex="0">
+                    <table class="sprint4-table sprint4-dora-table">
+                        <caption class="visually-hidden">Four planned Formly app DORA metrics, targets, data sources, and current status</caption>
+                        <thead><tr><th scope="col">Metric</th><th scope="col">Initial plan</th><th scope="col">How to measure it</th><th scope="col">Current status</th></tr></thead>
+                        <tbody>
+                            <tr class="sprint4-dora-group"><th scope="rowgroup" colspan="4">Speed / Throughput</th></tr>
+                            <tr><th scope="row">Deployment frequency</th><td>At least one successful user-facing app release per two-week sprint.</td><td>Count successful releases in the deployment log; record the date and version.</td><td>Planned target; not yet measured</td></tr>
+                            <tr><th scope="row">Lead time for changes</th><td>Median of no more than five working days from code commit to user-facing release.</td><td>Match each released change's commit timestamp to its deployment timestamp.</td><td>Planned target; not yet measured</td></tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="sprint4-dora-group"><th scope="rowgroup" colspan="4">Stability / Quality</th></tr>
+                            <tr><th scope="row">Change failure rate</th><td>No more than 25% of app releases require an urgent hotfix, rollback, or fix-forward for a user-visible failure.</td><td>Divide affected releases by all user-facing releases; link each failure to an incident record.</td><td>Planned target; not yet measured</td></tr>
+                            <tr><th scope="row">Time to restore service (MTTR)</th><td>Mean recovery time of no more than one working day (eight working hours) for deployment-caused incidents.</td><td>Record the first known user-visible failure and verified restoration for each incident, then calculate the mean.</td><td>Planned target; not yet measured</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="section-note">Collection owner: app delivery owner — name to assign. Proposed reporting window: rolling 90 days after the first user-facing release. Keep deployment and failure counts beside the rate: with only a few releases, one incident changes the percentage sharply. Report “insufficient data” when a metric has no qualifying event.</p>
+                <p class="section-note">This sprint uses the four metrics in the team's supplied outline. DORA now also tracks deployment rework rate, which is outside this four-metric plan; its current term for the fourth measure is “failed deployment recovery time.”</p>
+                <p class="section-note">Definitions reference: <a href="https://dora.dev/guides/dora-metrics/">DORA's metrics guide</a>.</p>
+            </section>
+
+            <section class="card doc-section" id="incident-response" aria-labelledby="incident-response-heading">
+                <p class="eyebrow">03 / Responding to failure</p>
+                <h2 id="incident-response-heading">Three severity levels</h2>
+                <p>Times below are targets for <strong>acknowledging and beginning triage</strong>, not promises to fix an incident within that time. The examples are drafts for team review.</p>
+                <div class="table-scroll" role="region" aria-label="Incident severity table" tabindex="0">
+                    <table class="sprint4-table">
+                        <caption class="visually-hidden">Draft severity levels, examples, and response times</caption>
+                        <thead><tr><th scope="col">Level</th><th scope="col">Formly example</th><th scope="col">Response target</th><th scope="col">First action</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">SEV 1 / Critical</th><td>Repeated potentially unsafe correction, or exposure of a user's video or account data</td><td>15 minutes</td><td>Stop the affected guidance or access path; start an incident log.</td></tr>
+                            <tr><th scope="row">SEV 2 / Major</th><td>Form checks broadly fail, saved feedback is missing for multiple users, or a model update sharply degrades an exercise</td><td>1 hour</td><td>Assess affected users, consider rollback, and record the decision.</td></tr>
+                            <tr><th scope="row">SEV 3 / Limited</th><td>An isolated check fails but retry or alternate guidance works</td><td>1 working day</td><td>Record the case, owner, and next test or fix.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>This sprint's role holders</h3>
+                <div class="sprint4-role-grid">
+                    <div><strong>Incident lead</strong><span>Name to assign</span><small>Coordinates triage and severity changes.</small></div>
+                    <div><strong>Technical investigator</strong><span>Name to assign</span><small>Examines app data, logs, and model output as needed.</small></div>
+                    <div><strong>Communications owner</strong><span>Name to assign</span><small>Updates the team and affected users when needed.</small></div>
+                </div>
+                <p class="section-note">The team must assign people and an alert channel before treating these response targets as operational commitments.</p>
+            </section>
+
+            <section class="card doc-section" id="incident-review" aria-labelledby="incident-review-heading">
+                <p class="eyebrow">05 / Learning from incidents</p>
+                <h2 id="incident-review-heading">Blameless incident review</h2>
+                <p class="sprint4-pending">Hypothetical team exercise — not an actual incident</p>
+                <p>This worked example asks what would happen if an exercise appeared saved, but its feedback was missing when reopened. The counts, times, and cause below are illustrative assumptions, not observations about a working Formly app. A real incident review must replace them with evidence and describe decisions without assigning personal blame.</p>
+                <ol class="sprint4-review-list">
+                    <li><strong>Summary</strong><span>During a pilot release, the app showed “Saved” after storing an exercise entry, but its feedback was not stored. Reopening the exercise showed an empty feedback area. The team stopped the misleading save flow, restored the previous version, and confirmed that new saves reopened with feedback.</span></li>
+                    <li><strong>Impact</strong><span>Illustrative scope: 5 of 18 exercises saved before rollback had missing feedback. Those users could see their exercise entries but could not revisit their guidance. An audit would determine whether the feedback could be recovered; the visible entry alone does not prove that the feedback exists.</span></li>
+                    <li><strong>Timeline</strong><span>T+0: save change released. T+25 minutes: first incomplete record. T+40: user report. T+55: team reproduced the issue and checked write logs. T+65: affected save flow paused and release rolled back. T+90: new save-and-reopen checks passed. Next working day: affected records audited and users updated.</span></li>
+                    <li><strong>Causes</strong><span>Assumed for this exercise: the exercise entry and feedback were written separately, and the interface treated the first write as full success. A failed feedback write was neither shown to the user nor retried. Testing checked that an entry appeared, but did not reopen it to confirm that feedback was durable. No alert watched for entries without feedback.</span></li>
+                    <li><strong>Response</strong><span>The incident lead would treat a widespread pilot failure as SEV 2 and begin triage within the one-hour target. Roll back the faulty save path, then compare affected entries with retained check outputs. Reattach feedback only when it can be matched safely to the correct user and exercise; otherwise explain the gap and offer a new check. Close the incident after save-and-reopen verification and a user update.</span></li>
+                    <li><strong>Action items</strong><span>App data owner: make “Saved” depend on both records being durable, or show a pending state with a safe retry; verify with a forced feedback-write failure before the next pilot release. Test owner: add a save-and-reopen test that checks feedback content, due before that release. Delivery owner: alert on exercise entries without feedback and rehearse record recovery, due before that release.</span></li>
+                </ol>
+            </section>
+
+        </div>
+
+        <nav class="sprint-navigation" aria-label="Sprint navigation">
+            <div class="sprint-nav-group sprint-nav-stack" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px;">
+                <a class="button document-download" href="pdfs/service-levels.pdf" download="service-levels.pdf" aria-label="Download Service Levels PDF">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></svg>
+                    <span>Download PDF</span>
+                </a>
+                <a href="../sprint-4.html">← Sprint 4 overview</a>
+            </div>
+            <a href="app-sections.html">App Sections →</a>
+        </nav>
+    </main>
+    <footer class="container site-footer"><span>Formly / Living Project Portal</span><span>Software Project Management</span></footer>
+</body>
+</html>
