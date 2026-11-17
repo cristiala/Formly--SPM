@@ -423,6 +423,18 @@ figure img { background: #fff; padding: 12px; border-top: 4px solid var(--accent
 .sprint4-wireframe-placeholder img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 320px; object-fit: contain; border: 1px solid var(--line); background: #fff; }
 .sprint4-landing .sprint4-wireframe-placeholder { min-height: 290px; }
 .sprint4-home-wireframe img { max-height: none; }
+
+/* Sprint 5 mockups use the same card treatment as the Sprint 4 design sections. */
+.sprint5-mockup { margin-top: 24px; padding: 20px; border: 1px solid var(--line); background: var(--surface-2); }
+.sprint5-mockup h3 { margin: 8px 0 18px; }
+.sprint5-mockup-layout { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 24px; align-items: start; }
+.sprint5-mockup-layout img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+.sprint5-mockup-layout .button { margin-top: 12px; }
+.sprint5-contribution { margin-top: 28px; }
+@media (max-width: 720px) {
+  .sprint5-mockup-layout { grid-template-columns: 1fr; }
+  .sprint5-mockup-layout img { max-width: 320px; }
+}
 .sprint4-wireframe-visual {
   display: grid; gap: 12px; width: 100%; min-height: 290px; padding: 16px; border: 2px dashed var(--line); background: var(--surface);
 }
